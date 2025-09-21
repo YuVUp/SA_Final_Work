@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+
+actor "Посетитель" as Guest
+actor "Менеджер на производстве" as ProductionManager
+
+rectangle "Система ресторана" {
+    usecase "Оформить заказ" as UC_PlaceOrder 
+    usecase "Просмотреть меню" as UC_ViewMenu
+    usecase "Добавить позиции в корзину" as UC_AddToCart
+    usecase "Произвести оплату" as UC_MakePayment
+    usecase "Получить талон с номером" as UC_GetReceipt
+    
+    usecase "Мониторинг производства" as UC_MonitorProduction
+    usecase "Оповестить о готовности заказа" as UC_NotifyOrderReady
+
+    ' Include-связи (обязательные шаги)
+    UC_PlaceOrder ..> UC_ViewMenu : include
+    UC_PlaceOrder ..> UC_AddToCart : include
+    UC_PlaceOrder ..> UC_MakePayment : include
+    UC_PlaceOrder ..> UC_GetReceipt : include
+}
+
+' Связи акторов с Use Case
+Guest --> UC_PlaceOrder
+Guest --> UC_ViewMenu
+Guest --> UC_GetReceipt
+
+ProductionManager --> UC_MonitorProduction
+ProductionManager --> UC_NotifyOrderReady
+
+' Связи между use cases
+UC_MakePayment --> UC_MonitorProduction
+UC_MonitorProduction --> UC_NotifyOrderReady
+
+note right of ProductionManager
+  - Мониторинг работы роботов
+  - Контроль готовности заказов
+  - Решение проблем производства
+end note
+
+@enduml
