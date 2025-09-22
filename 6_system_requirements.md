@@ -81,7 +81,7 @@ NFCOM Система должна быть совместима с  ОС Windows
 
 Основные функции системы представлены в виде UseCase диаграммы. 
 
-![](../diagrams/usecasediagram1.jpg)
+![](diagrams/usecasediagram1.jpg)
 
 ## 6.2.2 Описание UseCase, реализуемых в рамках MVP
 
@@ -1194,7 +1194,7 @@ NFCOM Система должна быть совместима с  ОС Windows
 
 ## 6.2.3.	Список UseCase, реализуемых в рамках первого релиза
 
-![](../diagrams/first_release.jpg)
+![](diagrams/first_release.jpg)
 
 ## 6.2.3.1
 

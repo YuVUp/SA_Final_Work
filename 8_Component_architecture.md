@@ -6,7 +6,7 @@
 
 ## 8.2.	Диаграмма компонентов
 
-![](../diagrams/component_diagram.svg)
+![](diagrams/component_diagram.svg)
 
 ## 8.3 Таблица информационных потоков
 

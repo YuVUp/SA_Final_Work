@@ -12,11 +12,11 @@
 - Категория_товара 
 - Ингредиент 
 
-![](../diagrams/class.jpg)
+![](diagrams/class.jpg)
 
 ## 7.2 Модель данных
 
-![](../diagrams/roborestaurantsdb.png)
+![](diagrams/roborestaurantsdb.png)
 
 ## 7.2.1 Описание таблиц БД
 
