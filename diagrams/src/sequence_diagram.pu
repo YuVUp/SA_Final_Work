@@ -1,0 +1,109 @@
+@startuml
+title "Процесс получения заказа и передачи на кухню"
+
+actor "Посетитель" as Посетитель
+header OTUS_HOME_WORK
+
+box Общая схема взаимодействия
+
+participant "Веб-клиент // Мобильное приложение" as Фронтенд
+participant "API Gateway" as Gateway
+participant "Сервис заказов" as OrderService
+participant "Сервис меню" as MenuService
+participant "Сервис оплаты" as PaymentService
+queue "Брокер сообщений" as MessageBroker 
+participant "Сервис управления роботами" as RobotService
+database "База данных заказов" as OrderDB
+participant "Система управления роботами" as RobotSystem
+participant "Роботы" as Robots
+
+autonumber "<b>[00]"
+hide footbox
+
+end box
+
+Посетитель -> Фронтенд: Выбирает блюда
+activate Фронтенд
+Фронтенд -> Gateway: GET /api/v1/menu
+activate Gateway
+'Gateway --> Фронтенд: Данные меню
+Gateway -> MenuService: Получить данные меню
+activate MenuService
+MenuService --> Gateway: Данные меню
+deactivate MenuService
+Gateway --> Фронтенд: Данные меню
+deactivate Gateway
+
+
+
+Посетитель -> Фронтенд: Формирует корзину и отправляет заказ
+Фронтенд -> Gateway: POST /api/v1/orders {items}
+activate Gateway
+Gateway -> OrderService: Создает заказ
+activate OrderService
+
+OrderService -> MenuService: Проверка наличия товаров
+activate MenuService
+
+alt Товары в наличии
+    MenuService --> OrderService: Статус наличия товаров: OK
+    deactivate MenuService
+    
+    OrderService -> OrderDB: Сохранить данные о заказе
+    OrderDB --> OrderService: orderId
+    OrderService --> Gateway: Создание заказа
+    deactivate OrderService
+    Gateway --> Фронтенд: 201 Создано (orderId)
+    deactivate Gateway
+    
+    Фронтенд -> Gateway: POST /api/v1/orders/{id}/pay
+    activate Gateway
+    Gateway -> PaymentService: Процесс оплаты (orderId, details)
+    activate PaymentService
+    PaymentService --> Gateway: Оплата подтверждена
+    deactivate PaymentService
+    Gateway --> Фронтенд: 200 OK
+    deactivate Gateway
+    Фронтенд --> Посетитель: "Оплата принята"
+    
+    activate OrderService
+    activate RobotService
+    RobotService ->> MessageBroker: Подписка на события
+    OrderService ->> MessageBroker: Публикация события о создании заказа
+    'activate MessageBroker
+    MessageBroker ->> RobotService: Событие: Создание заказа
+    
+    'activate RobotService
+    
+    loop Для каждого продукта
+        RobotService -> RobotSystem: Выполнить команду "Приготовить продукт"
+        RobotSystem -> Robots: Приготовить продукт
+        Robots --> RobotSystem: Сообщение о готовности продукта
+        RobotSystem --> RobotService: Команда "Приготовить продукт" выполнена
+    end
+
+    deactivate OrderService
+
+    RobotService ->> MessageBroker: Публикация события о готовности заказа
+    MessageBroker ->> Фронтенд: Статус обновлен (через web-socket)
+    
+    'RobotService ->> MessageBroker: Отправка события о готовности заказа
+    'MessageBroker --> OrderService: Заказ готов
+    'deactivate OrderService
+    'MessageBroker --> Фронтенд: Статус обновлен (через web-socket)
+    Фронтенд --> Посетитель: Уведомление: "Заказ готов"
+    deactivate Фронтенд
+    'deactivate MessageBroker
+
+else Недостаточно ингредиентов
+    MenuService --> OrderService: Статус наличия товаров: OUT_OF_STOCK (ингредиент X)
+    deactivate MenuService
+    OrderService --> Gateway: Ошибка: "Ингредиент X отсутствует"
+    deactivate OrderService
+    Gateway --> Фронтенд: 200, error: "INGREDIENT_UNAVAILABLE"
+    deactivate Gateway
+    Фронтенд --> Посетитель: "Извините, ингредиент X отсутствует. Выберите другое блюдо."
+    deactivate Фронтенд
+end
+
+@enduml
