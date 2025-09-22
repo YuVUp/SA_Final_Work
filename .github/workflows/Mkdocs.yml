@@ -25,4 +25,3 @@ jobs:
       - run: pip install beautifulsoup4>=4.11.1
       - run: pip install mkdocs-swagger-ui-tag      # Render Swagger
       - run: mkdocs gh-deploy --force
-      - run: mkdocs gh-deploy --force
