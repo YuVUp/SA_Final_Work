@@ -19,7 +19,7 @@
 
 ## 8.2.	Диаграмма компонентов
 
-![](../diagrams/component_diagram.svg)
+![](../docs/diagrams/component_diagram.svg)
 
 ## 8.3 Таблица информационных потоков
 

@@ -2,4 +2,4 @@
 
 ## 9.1.	Диаграмма последовательности
 
-![](../diagrams/sequence_diagram.jpg)
+![](../docs/diagrams/sequence_diagram.jpg)
