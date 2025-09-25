@@ -1,4 +1,4 @@
-site_name: My test CI\CD for Documentations
+site_name: Приложение для заказа и система оповещения
 
 nav:
   - Главная: index.md
