@@ -81,7 +81,7 @@ NFMAI5 Система должна обеспечивать сквозное л�
 
 Основные функции системы представлены в виде UseCase диаграммы. 
 
-[![Оформление заказа через приложение](diagrams/usecasediagram.jpg){: .hover-zoom }](diagrams/usecasediagram.jpg){: target="_blank" }
+[![Оформление заказа через приложение](diagrams/usecasediagram1.jpg){: .hover-zoom }](diagrams/usecasediagram1.jpg){: target="_blank" }
 
 <style>
 .hover-zoom {
@@ -1214,50 +1214,27 @@ NFMAI5 Система должна обеспечивать сквозное л�
 
 ## 6.2.3.	Список UseCase, реализуемых в рамках первого релиза
 
-```plantuml
-@startuml UseCase's MVP
-left to right direction
+[![Оформление заказа через приложение](diagrams/first_release.jpg){: .hover-zoom }](diagrams/first_release.jpg){: target="_blank" }
 
-actor "Посетитель" as Guest
-actor "Менеджер на производстве" as ProductionManager
-
-rectangle "Система ресторана" {
-    usecase "Оформить заказ" as UC_PlaceOrder 
-    usecase "Просмотреть меню" as UC_ViewMenu
-    usecase "Добавить позиции в корзину" as UC_AddToCart
-    usecase "Произвести оплату" as UC_MakePayment
-    usecase "Получить талон с номером" as UC_GetReceipt
-    
-    usecase "Мониторинг производства" as UC_MonitorProduction
-    usecase "Оповестить о готовности заказа" as UC_NotifyOrderReady
-
-    ' Include-связи (обязательные шаги)
-    UC_PlaceOrder ..> UC_ViewMenu : include
-    UC_PlaceOrder ..> UC_AddToCart : include
-    UC_PlaceOrder ..> UC_MakePayment : include
-    UC_PlaceOrder ..> UC_GetReceipt : include
+<style>
+.hover-zoom {
+    max-width: 100%;
+    max-height: 600px;
+    cursor: zoom-in;
+    border: 2px solid #ccc;
+    padding: 20px;
+    object-fit: contain;
+    display: block;
+    margin: 25px auto;
+    transition: transform 0.5s ease;
 }
 
-' Связи акторов с Use Case
-Guest --> UC_PlaceOrder
-Guest --> UC_ViewMenu
-Guest --> UC_GetReceipt
-
-ProductionManager --> UC_MonitorProduction
-ProductionManager --> UC_NotifyOrderReady
-
-' Связи между use cases
-UC_MakePayment --> UC_MonitorProduction
-UC_MonitorProduction --> UC_NotifyOrderReady
-
-note right of ProductionManager
-  - Мониторинг работы роботов
-  - Контроль готовности заказов
-  - Решение проблем производства
-end note
-
-@enduml
-```
+.hover-zoom:hover {
+    transform: scale(1.8);
+    z-index: 100;
+    position: relative;
+}
+</style>
 
 ## 6.2.3.1
 
