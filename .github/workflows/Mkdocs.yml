@@ -27,7 +27,7 @@ jobs:
             cairosvg \
             beautifulsoup4>=4.11.1 \
             mkdocs-swagger-ui-tag \
-            plantuml-markdown
+            plantuml-markdown \
             mkdocs-diagrams
       - run: mkdocs gh-deploy --force
   deploy_mkdocs:
