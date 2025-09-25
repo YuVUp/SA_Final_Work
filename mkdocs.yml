@@ -67,3 +67,4 @@ plugins:
    - search
    - swagger-ui-tag
    - mermaid2
+   - jekyll-plantuml
