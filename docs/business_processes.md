@@ -5,4 +5,21 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; Оформление заказа через приложение
 
-[![Оформление заказа через приложение](diagrams/making_order.svg){: style="max-width: 100%; height: auto; cursor: zoom-in; border: 1px solid #ddd; padding: 10px;" }](diagrams/making_order.svg){: target="_blank" }
+[![Оформление заказа через приложение](diagrams/making_order.svg){: .zoomable }](diagrams/making_order.svg){: target="_blank" }
+
+
+<style>
+.zoomable {
+    max-width: 100%;
+    height: auto;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.zoomable:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+</style>
