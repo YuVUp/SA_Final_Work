@@ -1,4 +1,4 @@
-site_name: My test CI\CD
+site_name: My test CI\CD for Documentations
 theme:
   name: material
   features:
@@ -39,3 +39,15 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.mark
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+   - swagger-ui-tag
+   - mermaid2
