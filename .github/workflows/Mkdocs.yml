@@ -5,22 +5,46 @@ on:
       - main
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build_mkdocs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.9
+      - run: pip install \
+            mkdocs-material \
+            mkdocs-mermaid2-plugin \
+            pillow \
+            cairosvg \
+            beautifulsoup4>=4.11.1 \
+            mkdocs-swagger-ui-tag
+      - run: mkdocs gh-deploy --force
+  deploy_mkdocs:
+    needs: build_mkdocs
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          python-version: 3.x
-      - uses: actions/cache@v3
+          ref: gh-pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          key: ${{ github.ref }}
-          path: .cache
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-mermaid2-plugin
-      - run: pip install pillow cairosvg
-      - run: pip install beautifulsoup4>=4.11.1
-      - run: pip install mkdocs-swagger-ui-tag      # Render Swagger
-      - run: mkdocs gh-deploy --force
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
