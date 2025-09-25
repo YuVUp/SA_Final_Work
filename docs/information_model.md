@@ -12,11 +12,51 @@
 - Категория_товара 
 - Ингредиент 
 
-![](/yuvup.github.io/SA_Final_Work/docs/diagrams/class.jpg)
+[![Оформление заказа через приложение](diagrams/class.jpg){: .hover-zoom }](diagrams/class.jpg){: target="_blank" }
+
+<style>
+.hover-zoom {
+    max-width: 100%;
+    max-height: 600px;
+    cursor: zoom-in;
+    border: 2px solid #ccc;
+    padding: 20px;
+    object-fit: contain;
+    display: block;
+    margin: 25px auto;
+    transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.8);
+    z-index: 100;
+    position: relative;
+}
+</style>
 
 ## 7.2 Модель данных
 
-![](/yuvup.github.io/SA_Final_Work/docs/diagrams/roborestaurantsdb.png)
+[![Оформление заказа через приложение](diagrams/roborestaurantsdb.png){: .hover-zoom }](diagrams/roborestaurantsdb.png){: target="_blank" }
+
+<style>
+.hover-zoom {
+    max-width: 100%;
+    max-height: 600px;
+    cursor: zoom-in;
+    border: 2px solid #ccc;
+    padding: 20px;
+    object-fit: contain;
+    display: block;
+    margin: 25px auto;
+    transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.8);
+    z-index: 100;
+    position: relative;
+}
+</style>
 
 ## 7.2.1 Описание таблиц БД
 
