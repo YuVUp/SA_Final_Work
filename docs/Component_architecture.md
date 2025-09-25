@@ -17,26 +17,6 @@
 
 [![Оформление заказа через приложение](diagrams/component_diagram.png){: .hover-zoom }](diagrams/component_diagram.png){: target="_blank" }
 
-<style>
-.hover-zoom {
-    max-width: 100%;
-    max-height: 600px;
-    cursor: zoom-in;
-    border: 2px solid #ccc;
-    padding: 20px;
-    object-fit: contain;
-    display: block;
-    margin: 25px auto;
-    transition: transform 0.5s ease;
-}
-
-.hover-zoom:hover {
-    transform: scale(1.8);
-    z-index: 100;
-    position: relative;
-}
-</style>
-
 ### 8.3 Таблица информационных потоков
 
 | № | Источник (Контейнер) | Приемник (Контейнер) | Передаваемая информация / Событие (Сущности) | Протокол / Метод взаимодействия |
