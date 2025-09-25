@@ -5,7 +5,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; Оформление заказа через приложение
 
-![Оформление заказа через приложение](diagrams/making_order.svg){: style="width: 100%; height: auto; cursor: zoom-in;" }
+![Оформление заказа через приложение](diagrams/making_order.svg){: .zoomable }
 
 <style>
 .zoomable {
