@@ -15,7 +15,7 @@
 
 ## 8.2.	Диаграмма компонентов
 
-[![Оформление заказа через приложение](diagrams/component_diagram.svg){: .hover-zoom }](diagrams/component_diagram.svg){: target="_blank" }
+[![Оформление заказа через приложение](diagrams/class.jpg){: .hover-zoom }](diagrams/class.jpg){: target="_blank" }
 
 <style>
 .hover-zoom {

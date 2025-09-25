@@ -1,5 +1,4 @@
 # 9	Интеграционное взаимодействие
-
 ## 9.1.	Диаграмма последовательности
 
 [![Оформление заказа через приложение](diagrams/sequence_diagram.jpg){: .hover-zoom }](diagrams/sequence_diagram.jpg){: target="_blank" }
