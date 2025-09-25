@@ -5,4 +5,4 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; Оформление заказа через приложение
 
-![Оформление заказа через приложение](https://yuvup.github.io/SA_Final_Work/diagrams/making_orders.svg)
+![Оформление заказа через приложение](diagrams/making_orders.svg)
