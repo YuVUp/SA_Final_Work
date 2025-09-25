@@ -22,6 +22,7 @@ jobs:
           python-version: 3.9
       - run: pip install \
             mkdocs-material \
+            mkdocs-mermaid2-plugin \
             pillow \
             cairosvg \
             beautifulsoup4>=4.11.1 \
