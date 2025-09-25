@@ -81,14 +81,7 @@ NFMAI5 Система должна обеспечивать сквозное л�
 
 Основные функции системы представлены в виде UseCase диаграммы. 
 
-
-@startuml
-!includeurl https://raw.githubusercontent.com/YuVUp/SA_Final_Work/refs/heads/main/docs/diagrams/src/usecase_diagram.pu
-@enduml
-//www.plantuml.com/plantuml/png/BSYx3G8n303G_gQ01SuzrT6m00945Hd7N28I9_97h4_3AzzcZkhHstAiGYqoXxP3SPzs0b3yhdlr4gymLXhYBBxIwF2C-st2zPmkLR2bnz0FAByD2cCsw5W5yY23N75Nx0Qc165CQ9p-kSvODfOSlVq0
-
-[![Оформление заказа через приложение](http://www.plantuml.com/plantuml/png/BSYx3G8n303G_gQ01SuzrT6m00945Hd7N28I9_97h4_3AzzcZkhHstAiGYqoXxP3SPzs0b3yhdlr4gymLXhYBBxIwF2C-st2zPmkLR2bnz0FAByD2cCsw5W5yY23N75Nx0Qc165CQ9p-kSvODfOSlVq0){: .zoomable }](diagrams/usecasediagram.jpg){: target="_blank" }
-
+[![Оформление заказа через приложение](diagrams/usecasediagram.jpg){: .zoomable }](diagrams/usecasediagram.jpg){: target="_blank" }
 
 <style>
 .zoomable {
