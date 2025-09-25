@@ -81,7 +81,7 @@ NFMAI5 Система должна обеспечивать сквозное л�
 
 Основные функции системы представлены в виде UseCase диаграммы. 
 
-::: plantuml
+```plantuml
 @startuml
 left to right direction
 
@@ -151,7 +151,7 @@ ProductionSystem --> UC_MonitorProduction
 ProductionSystem --> UC_NotifyOrderReady
 
 @enduml
-::: plantuml
+```
 
 ## 6.2.2 Описание UseCase, реализуемых в рамках MVP
 
