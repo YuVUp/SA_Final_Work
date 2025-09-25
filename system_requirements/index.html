@@ -1013,76 +1013,75 @@ NFREL3 Время потери данных за время, не более 1 �
 <h2 id="62">6.2 Требования к функциям, выполняемым системой</h2>
 <h2 id="621-use-ase">6.2.1.   Use Сase диаграмма</h2>
 <p>Основные функции системы представлены в виде UseCase диаграммы. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@startuml
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>left to right direction
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>actor &quot;Посетитель&quot; as Guest
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>actor &quot;Менеджер на гостеприимстве&quot; as HospitalityManager
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>actor &quot;Менеджер по ассортименту&quot; as AssortmentManager
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>actor &quot;Менеджеры на производстве&quot; as ProductionSystem
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>rectangle &quot;Система ресторана&quot; {
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    usecase &quot;UC.01.01 Оформить заказ&quot; as UC_PlaceOrder 
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    usecase &quot;UC.01.02 Просмотреть меню&quot; as UC_ViewMenu
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    usecase &quot;UC.01.03 Добавить позиции в корзину&quot; as UC_AddToCart
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    usecase &quot;UC.01.04 Произвести оплату&quot; as UC_MakePayment
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    usecase &quot;UC.01.05 Получить талон с номером&quot; as UC_GetReceipt
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    usecase &quot;UC.01.06 Проверить программу лояльности&quot; as UC_CheckLoyalty
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    usecase &quot;UC.01.07 Зарегистрироваться в программе&quot; as UC_RegisterLoyalty
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    usecase &quot;UC.01.08 Использовать бонусные баллы&quot; as UC_UseLoyaltyPoints
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    usecase &quot;UC.01.09 Применить скидку бизнес-ланч&quot; as UC_ApplyBusinessLunchDiscount
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    usecase &quot;UC.01.10 Добавить подарок&quot; as UC_ApplyFreeGift
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    usecase &quot;UC.02.01 Обработать возврат денег&quot; as UC_ProcessRefund 
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    usecase &quot;UC.02.02 Возврат наличными&quot; as UC_CashRefund
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    usecase &quot;UC.02.03 Возврат на карту&quot; as UC_CardRefund
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    usecase &quot;UC.03.01 Управление меню и акциями&quot; as UC_ManageMenu 
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    usecase &quot;UC.03.02 Добавить новую позицию&quot; as UC_AddMenuItem
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    usecase &quot;UC.03.03 Изменить цену&quot; as UC_ChangePrice
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    usecase &quot;UC.03.04 Настроить акции&quot; as UC_SetupPromotions
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    usecase &quot;UC.04.01 Настроить технологические карты&quot; as UC_ConfigureRecipes
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    usecase &quot;UC.05.01 Мониторинг производства&quot; as UC_MonitorProduction
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    usecase &quot;UC.05.02 Оповестить о готовности заказа&quot; as UC_NotifyOrderReady
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    &#39; Include-связи (обязательные шаги)
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    UC_PlaceOrder ..&gt; UC_ViewMenu : include
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    UC_PlaceOrder ..&gt; UC_AddToCart : include
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    UC_PlaceOrder ..&gt; UC_MakePayment : include
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    UC_PlaceOrder ..&gt; UC_GetReceipt : include
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    UC_PlaceOrder ..&gt; UC_CheckLoyalty : include
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    UC_ProcessRefund &lt;|.. UC_CashRefund 
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    UC_ProcessRefund &lt;|.. UC_CardRefund 
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    UC_ManageMenu ..&gt; UC_AddMenuItem : include
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    UC_ManageMenu ..&gt; UC_ChangePrice : include
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    UC_ManageMenu ..&gt; UC_SetupPromotions : include
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    &#39; Extend-связи (условные/дополнительные шаги)
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>    UC_CheckLoyalty &lt;.. UC_RegisterLoyalty : extends
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>    UC_CheckLoyalty &lt;.. UC_UseLoyaltyPoints : extends
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>    UC_MakePayment &lt;.. UC_ApplyBusinessLunchDiscount : extends
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>    UC_MakePayment &lt;.. UC_ApplyFreeGift : extends
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>}
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>&#39; Связи акторов с Use Case
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>Guest --&gt; UC_PlaceOrder
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>Guest --&gt; UC_ViewMenu
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>Guest --&gt; UC_RegisterLoyalty
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
-<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>HospitalityManager --&gt; UC_ProcessRefund
-<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>HospitalityManager --&gt; UC_NotifyOrderReady
-<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
-<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>AssortmentManager --&gt; UC_ManageMenu
-<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>AssortmentManager --&gt; UC_ConfigureRecipes
-<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>
-<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>ProductionSystem --&gt; UC_MonitorProduction
-<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>ProductionSystem --&gt; UC_NotifyOrderReady
-<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>
-<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>@enduml
-</code></pre></div>
+<pre class="plantuml"><code>@startuml
+left to right direction
+
+actor "Посетитель" as Guest
+actor "Менеджер на гостеприимстве" as HospitalityManager
+actor "Менеджер по ассортименту" as AssortmentManager
+actor "Менеджеры на производстве" as ProductionSystem
+
+rectangle "Система ресторана" {
+    usecase "UC.01.01 Оформить заказ" as UC_PlaceOrder 
+    usecase "UC.01.02 Просмотреть меню" as UC_ViewMenu
+    usecase "UC.01.03 Добавить позиции в корзину" as UC_AddToCart
+    usecase "UC.01.04 Произвести оплату" as UC_MakePayment
+    usecase "UC.01.05 Получить талон с номером" as UC_GetReceipt
+    usecase "UC.01.06 Проверить программу лояльности" as UC_CheckLoyalty
+    usecase "UC.01.07 Зарегистрироваться в программе" as UC_RegisterLoyalty
+    usecase "UC.01.08 Использовать бонусные баллы" as UC_UseLoyaltyPoints
+    usecase "UC.01.09 Применить скидку бизнес-ланч" as UC_ApplyBusinessLunchDiscount
+    usecase "UC.01.10 Добавить подарок" as UC_ApplyFreeGift
+
+    usecase "UC.02.01 Обработать возврат денег" as UC_ProcessRefund 
+    usecase "UC.02.02 Возврат наличными" as UC_CashRefund
+    usecase "UC.02.03 Возврат на карту" as UC_CardRefund
+
+    usecase "UC.03.01 Управление меню и акциями" as UC_ManageMenu 
+    usecase "UC.03.02 Добавить новую позицию" as UC_AddMenuItem
+    usecase "UC.03.03 Изменить цену" as UC_ChangePrice
+    usecase "UC.03.04 Настроить акции" as UC_SetupPromotions
+
+    usecase "UC.04.01 Настроить технологические карты" as UC_ConfigureRecipes
+    usecase "UC.05.01 Мониторинг производства" as UC_MonitorProduction
+    usecase "UC.05.02 Оповестить о готовности заказа" as UC_NotifyOrderReady
+
+    ' Include-связи (обязательные шаги)
+    UC_PlaceOrder ..&gt; UC_ViewMenu : include
+    UC_PlaceOrder ..&gt; UC_AddToCart : include
+    UC_PlaceOrder ..&gt; UC_MakePayment : include
+    UC_PlaceOrder ..&gt; UC_GetReceipt : include
+    UC_PlaceOrder ..&gt; UC_CheckLoyalty : include
+
+    UC_ProcessRefund &lt;|.. UC_CashRefund 
+    UC_ProcessRefund &lt;|.. UC_CardRefund 
+
+    UC_ManageMenu ..&gt; UC_AddMenuItem : include
+    UC_ManageMenu ..&gt; UC_ChangePrice : include
+    UC_ManageMenu ..&gt; UC_SetupPromotions : include
+
+    ' Extend-связи (условные/дополнительные шаги)
+    UC_CheckLoyalty &lt;.. UC_RegisterLoyalty : extends
+    UC_CheckLoyalty &lt;.. UC_UseLoyaltyPoints : extends
+    UC_MakePayment &lt;.. UC_ApplyBusinessLunchDiscount : extends
+    UC_MakePayment &lt;.. UC_ApplyFreeGift : extends
+}
+
+' Связи акторов с Use Case
+Guest --&gt; UC_PlaceOrder
+Guest --&gt; UC_ViewMenu
+Guest --&gt; UC_RegisterLoyalty
+
+HospitalityManager --&gt; UC_ProcessRefund
+HospitalityManager --&gt; UC_NotifyOrderReady
+
+AssortmentManager --&gt; UC_ManageMenu
+AssortmentManager --&gt; UC_ConfigureRecipes
+
+ProductionSystem --&gt; UC_MonitorProduction
+ProductionSystem --&gt; UC_NotifyOrderReady
+
+@enduml</code></pre>
 <h2 id="622-usecase-mvp">6.2.2 Описание UseCase, реализуемых в рамках MVP</h2>
 <h3 id="6221">6.2.2.1</h3>
 <h1 id="uc0101">Вариант использования: UC.01.01 «Оформить заказ»</h1>
@@ -2121,49 +2120,48 @@ NFREL3 Время потери данных за время, не более 1 �
 - Система отображает сообщение "Подарок временно недоступен"
 - Вариант использования завершается</p>
 <h2 id="623-usecase">6.2.3.   Список UseCase, реализуемых в рамках первого релиза</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>@startuml UseCase&#39;s MVP
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>left to right direction
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>actor &quot;Посетитель&quot; as Guest
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>actor &quot;Менеджер на производстве&quot; as ProductionManager
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>rectangle &quot;Система ресторана&quot; {
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    usecase &quot;Оформить заказ&quot; as UC_PlaceOrder 
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    usecase &quot;Просмотреть меню&quot; as UC_ViewMenu
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    usecase &quot;Добавить позиции в корзину&quot; as UC_AddToCart
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    usecase &quot;Произвести оплату&quot; as UC_MakePayment
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    usecase &quot;Получить талон с номером&quot; as UC_GetReceipt
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    usecase &quot;Мониторинг производства&quot; as UC_MonitorProduction
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    usecase &quot;Оповестить о готовности заказа&quot; as UC_NotifyOrderReady
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    &#39; Include-связи (обязательные шаги)
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    UC_PlaceOrder ..&gt; UC_ViewMenu : include
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    UC_PlaceOrder ..&gt; UC_AddToCart : include
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    UC_PlaceOrder ..&gt; UC_MakePayment : include
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    UC_PlaceOrder ..&gt; UC_GetReceipt : include
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>}
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>&#39; Связи акторов с Use Case
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>Guest --&gt; UC_PlaceOrder
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>Guest --&gt; UC_ViewMenu
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>Guest --&gt; UC_GetReceipt
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>ProductionManager --&gt; UC_MonitorProduction
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>ProductionManager --&gt; UC_NotifyOrderReady
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>&#39; Связи между use cases
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>UC_MakePayment --&gt; UC_MonitorProduction
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>UC_MonitorProduction --&gt; UC_NotifyOrderReady
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>note right of ProductionManager
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>  - Мониторинг работы роботов
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>  - Контроль готовности заказов
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>  - Решение проблем производства
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>end note
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>@enduml
-</code></pre></div>
+<pre class="plantuml"><code>@startuml UseCase's MVP
+left to right direction
+
+actor "Посетитель" as Guest
+actor "Менеджер на производстве" as ProductionManager
+
+rectangle "Система ресторана" {
+    usecase "Оформить заказ" as UC_PlaceOrder 
+    usecase "Просмотреть меню" as UC_ViewMenu
+    usecase "Добавить позиции в корзину" as UC_AddToCart
+    usecase "Произвести оплату" as UC_MakePayment
+    usecase "Получить талон с номером" as UC_GetReceipt
+
+    usecase "Мониторинг производства" as UC_MonitorProduction
+    usecase "Оповестить о готовности заказа" as UC_NotifyOrderReady
+
+    ' Include-связи (обязательные шаги)
+    UC_PlaceOrder ..&gt; UC_ViewMenu : include
+    UC_PlaceOrder ..&gt; UC_AddToCart : include
+    UC_PlaceOrder ..&gt; UC_MakePayment : include
+    UC_PlaceOrder ..&gt; UC_GetReceipt : include
+}
+
+' Связи акторов с Use Case
+Guest --&gt; UC_PlaceOrder
+Guest --&gt; UC_ViewMenu
+Guest --&gt; UC_GetReceipt
+
+ProductionManager --&gt; UC_MonitorProduction
+ProductionManager --&gt; UC_NotifyOrderReady
+
+' Связи между use cases
+UC_MakePayment --&gt; UC_MonitorProduction
+UC_MonitorProduction --&gt; UC_NotifyOrderReady
+
+note right of ProductionManager
+  - Мониторинг работы роботов
+  - Контроль готовности заказов
+  - Решение проблем производства
+end note
+
+@enduml</code></pre>
 <h2 id="6231">6.2.3.1</h2>
 <h1 id="uc0101-uc0105">Вариант использования: UC.01.01 «Оформить заказ» (включает UC.01.05 «Добавить позиции в корзину»)</h1>
 <p><strong>Основной поток:</strong>
