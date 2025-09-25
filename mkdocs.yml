@@ -31,7 +31,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
-  language: en
+  language: ru
   palette:
     - scheme: default
       toggle:
@@ -72,9 +72,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
+   - search
    - swagger-ui-tag
    - mermaid2
-   - search
    - diagrams:
       plantuml:
         server: http://www.plantuml.com/plantuml
