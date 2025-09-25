@@ -67,6 +67,4 @@ plugins:
    - search
    - swagger-ui-tag
    - mermaid2
-   - diagrams:
-      plantuml:
-        server: http://www.plantuml.com/plantuml
+   - with-puml
