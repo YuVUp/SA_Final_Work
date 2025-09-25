@@ -81,23 +81,25 @@ NFMAI5 Система должна обеспечивать сквозное л�
 
 Основные функции системы представлены в виде UseCase диаграммы. 
 
-[![Оформление заказа через приложение](diagrams/usecasediagram.jpg){: .zoomable }](diagrams/usecasediagram.jpg){: target="_blank" }
+[![Оформление заказа через приложение](diagrams/usecasediagram.jpg){: .hover-zoom }](diagrams/usecasediagram.jpg){: target="_blank" }
 
 <style>
-.zoomable {
+.hover-zoom {
     max-width: 100%;
-    max-height: 600px; /* Ограничиваем высоту */
+    max-height: 600px;
     cursor: zoom-in;
-    border: 1px solid #ddd;
-    padding: 10px;
-    object-fit: contain; /* Важно! Сохраняет пропорции */
+    border: 2px solid #ccc;
+    padding: 20px;
+    object-fit: contain;
     display: block;
-    margin: 0 auto;
+    margin: 25px auto;
+    transition: transform 0.5s ease;
 }
 
-.zoomable:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.hover-zoom:hover {
+    transform: scale(1.8);
+    z-index: 100;
+    position: relative;
 }
 </style>
 
