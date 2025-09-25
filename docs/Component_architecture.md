@@ -19,7 +19,7 @@
 
 ## 8.2.	Диаграмма компонентов
 
-![](../docs/diagrams/component_diagram.svg)
+![](/yuvup.github.io/SA_Final_Work/docs/diagrams/component_diagram.svg)
 
 ## 8.3 Таблица информационных потоков
 

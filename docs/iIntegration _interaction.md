@@ -2,4 +2,4 @@
 
 ## 9.1.	Диаграмма последовательности
 
-![](../docs/diagrams/sequence_diagram.jpg)
+![](/yuvup.github.io/SA_Final_Work/docs/diagrams/sequence_diagram.jpg)

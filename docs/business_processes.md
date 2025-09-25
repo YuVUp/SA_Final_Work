@@ -5,4 +5,4 @@
 
 <p style="text-indent: 1.5em;">Оформление заказа через приложение
 
-![](diagrams/making_orders.svg)
+![](/yuvup.github.io/SA_Final_Work/docs/diagrams/making_orders.svg)

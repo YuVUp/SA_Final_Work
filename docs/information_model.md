@@ -12,11 +12,11 @@
 - Категория_товара 
 - Ингредиент 
 
-![](../docs/diagrams/class.jpg)
+![](/yuvup.github.io/SA_Final_Work/docs/diagrams/class.jpg)
 
 ## 7.2 Модель данных
 
-![](../docs/diagrams/roborestaurantsdb.png)
+![](/yuvup.github.io/SA_Final_Work/docs/diagrams/roborestaurantsdb.png)
 
 ## 7.2.1 Описание таблиц БД
 
