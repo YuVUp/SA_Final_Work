@@ -81,12 +81,80 @@ NFMAI5 Система должна обеспечивать сквозное л�
 
 Основные функции системы представлены в виде UseCase диаграммы. 
 
-```plantuml
-@startuml
-actor User
-usecase "Test Use Case" as UC1
-User --> UC1
-@enduml
+```mermaid
+flowchart TD
+    %% Actors
+    Guest[Посетитель]
+    HospitalityManager[Менеджер на гостеприимстве]
+    AssortmentManager[Менеджер по ассортименту]
+    ProductionSystem[Менеджеры на производстве]
+    
+    %% Restaurant System Container
+    subgraph RestaurantSystem[Система ресторана]
+        %% UC.01.x - Ordering
+        UC_PlaceOrder[UC.01.01 Оформить заказ]
+        UC_ViewMenu[UC.01.02 Просмотреть меню]
+        UC_AddToCart[UC.01.03 Добавить позиции в корзину]
+        UC_MakePayment[UC.01.04 Произвести оплату]
+        UC_GetReceipt[UC.01.05 Получить талон с номером]
+        UC_CheckLoyalty[UC.01.06 Проверить программу лояльности]
+        UC_RegisterLoyalty[UC.01.07 Зарегистрироваться в программе]
+        UC_UseLoyaltyPoints[UC.01.08 Использовать бонусные баллы]
+        UC_ApplyBusinessLunchDiscount[UC.01.09 Применить скидку бизнес-ланч]
+        UC_ApplyFreeGift[UC.01.10 Добавить подарок]
+        
+        %% UC.02.x - Refunds
+        UC_ProcessRefund[UC.02.01 Обработать возврат денег]
+        UC_CashRefund[UC.02.02 Возврат наличными]
+        UC_CardRefund[UC.02.03 Возврат на карту]
+        
+        %% UC.03.x - Menu Management
+        UC_ManageMenu[UC.03.01 Управление меню и акциями]
+        UC_AddMenuItem[UC.03.02 Добавить новую позицию]
+        UC_ChangePrice[UC.03.03 Изменить цену]
+        UC_SetupPromotions[UC.03.04 Настроить акции]
+        
+        %% UC.04.x - Configuration
+        UC_ConfigureRecipes[UC.04.01 Настроить технологические карты]
+        
+        %% UC.05.x - Production
+        UC_MonitorProduction[UC.05.01 Мониторинг производства]
+        UC_NotifyOrderReady[UC.05.02 Оповестить о готовности заказа]
+    end
+    
+    %% Include relationships (solid lines)
+    UC_PlaceOrder --> UC_ViewMenu
+    UC_PlaceOrder --> UC_AddToCart
+    UC_PlaceOrder --> UC_MakePayment
+    UC_PlaceOrder --> UC_GetReceipt
+    UC_PlaceOrder --> UC_CheckLoyalty
+    
+    UC_ProcessRefund --> UC_CashRefund
+    UC_ProcessRefund --> UC_CardRefund
+    
+    UC_ManageMenu --> UC_AddMenuItem
+    UC_ManageMenu --> UC_ChangePrice
+    UC_ManageMenu --> UC_SetupPromotions
+    
+    %% Extend relationships (dashed lines)
+    UC_CheckLoyalty -.-> UC_RegisterLoyalty
+    UC_CheckLoyalty -.-> UC_UseLoyaltyPoints
+    UC_MakePayment -.-> UC_ApplyBusinessLunchDiscount
+    UC_MakePayment -.-> UC_ApplyFreeGift
+    
+    %% Actor connections
+    Guest --> UC_PlaceOrder
+    Guest --> UC_ViewMenu
+    Guest --> UC_RegisterLoyalty
+    
+    HospitalityManager --> UC_ProcessRefund
+    HospitalityManager --> UC_NotifyOrderReady
+    
+    AssortmentManager --> UC_ManageMenu
+    AssortmentManager --> UC_ConfigureRecipes
+    
+    ProductionSystem --> UC_MonitorProduction
+    ProductionSystem --> UC_NotifyOrderReady
 ```
 
 ## 6.2.2 Описание UseCase, реализуемых в рамках MVP
