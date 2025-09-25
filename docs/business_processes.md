@@ -5,7 +5,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; Оформление заказа через приложение
 
-[![Оформление заказа через приложение](diagrams/making_order.svg){: .zoomable }](diagrams/making_order.svg){: target="_blank" }
+[![Оформление заказа через приложение](diagrams/making_order.svg){: .zoomable }](diagrams/making_order.png){: target="_blank" }
 
 
 <style>
@@ -25,10 +25,3 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 </style>
-
-<div style="text-align: center; overflow: auto; border: 1px solid #ddd; padding: 10px;">
-    <a href="diagrams/making_order.svg" target="_blank">
-        <img src="diagrams/making_order.svg" 
-             style="width: 200%; max-width: none; cursor: zoom-in; margin-left: -50%;">
-    </a>
-</div>
