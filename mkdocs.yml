@@ -16,8 +16,8 @@ nav:
     - Глава 11: api.md
     - Глава 12: dev_assignments.md
   - Ресурсы:
-    - Диаграммы: diagrams/
-    - Файрфреймы: wf/
+    - Диаграммы: diagrams/index.md
+    - Файрфреймы: wf/index.md
 
 theme:
   name: material
