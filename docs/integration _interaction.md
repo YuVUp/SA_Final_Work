@@ -2,8 +2,6 @@
 
 ## 9.1.	Диаграмма последовательности
 
-![](/yuvup.github.io/SA_Final_Work/docs/diagrams/sequence_diagram.jpg)
-
 [![Оформление заказа через приложение](diagrams/sequence_diagram.jpg){: .hover-zoom }](diagrams/sequence_diagram.jpg){: target="_blank" }
 
 <style>
