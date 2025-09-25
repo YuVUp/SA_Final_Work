@@ -1,6 +1,2 @@
----
-template: home.html
-title: Material for MkDocs
----
-
-Welcome to Material for MkDocs.
+## Hello
+this test page v1
