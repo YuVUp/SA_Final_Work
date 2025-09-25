@@ -26,8 +26,7 @@ jobs:
             pillow \
             cairosvg \
             beautifulsoup4>=4.11.1 \
-            mkdocs-swagger-ui-tag \
-            jekyll-plantuml
+            mkdocs-swagger-ui-tag
       - run: mkdocs gh-deploy --force
   deploy_mkdocs:
     needs: build_mkdocs
