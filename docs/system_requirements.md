@@ -81,77 +81,32 @@ NFMAI5 Система должна обеспечивать сквозное л�
 
 Основные функции системы представлены в виде UseCase диаграммы. 
 
-```plantuml
+
 @startuml
-left to right direction
+!includeurl https://raw.githubusercontent.com/YuVUp/SA_Final_Work/refs/heads/main/docs/diagrams/src/usecase_diagram.pu
+@enduml
+//www.plantuml.com/plantuml/png/BSYx3G8n303G_gQ01SuzrT6m00945Hd7N28I9_97h4_3AzzcZkhHstAiGYqoXxP3SPzs0b3yhdlr4gymLXhYBBxIwF2C-st2zPmkLR2bnz0FAByD2cCsw5W5yY23N75Nx0Qc165CQ9p-kSvODfOSlVq0
 
-actor "Посетитель" as Guest
-actor "Менеджер на гостеприимстве" as HospitalityManager
-actor "Менеджер по ассортименту" as AssortmentManager
-actor "Менеджеры на производстве" as ProductionSystem
+[![Оформление заказа через приложение](http://www.plantuml.com/plantuml/png/BSYx3G8n303G_gQ01SuzrT6m00945Hd7N28I9_97h4_3AzzcZkhHstAiGYqoXxP3SPzs0b3yhdlr4gymLXhYBBxIwF2C-st2zPmkLR2bnz0FAByD2cCsw5W5yY23N75Nx0Qc165CQ9p-kSvODfOSlVq0){: .zoomable }](diagrams/making_order.png){: target="_blank" }
 
-rectangle "Система ресторана" {
-    usecase "UC.01.01 Оформить заказ" as UC_PlaceOrder 
-    usecase "UC.01.02 Просмотреть меню" as UC_ViewMenu
-    usecase "UC.01.03 Добавить позиции в корзину" as UC_AddToCart
-    usecase "UC.01.04 Произвести оплату" as UC_MakePayment
-    usecase "UC.01.05 Получить талон с номером" as UC_GetReceipt
-    usecase "UC.01.06 Проверить программу лояльности" as UC_CheckLoyalty
-    usecase "UC.01.07 Зарегистрироваться в программе" as UC_RegisterLoyalty
-    usecase "UC.01.08 Использовать бонусные баллы" as UC_UseLoyaltyPoints
-    usecase "UC.01.09 Применить скидку бизнес-ланч" as UC_ApplyBusinessLunchDiscount
-    usecase "UC.01.10 Добавить подарок" as UC_ApplyFreeGift
 
-    usecase "UC.02.01 Обработать возврат денег" as UC_ProcessRefund 
-    usecase "UC.02.02 Возврат наличными" as UC_CashRefund
-    usecase "UC.02.03 Возврат на карту" as UC_CardRefund
-  
-    usecase "UC.03.01 Управление меню и акциями" as UC_ManageMenu 
-    usecase "UC.03.02 Добавить новую позицию" as UC_AddMenuItem
-    usecase "UC.03.03 Изменить цену" as UC_ChangePrice
-    usecase "UC.03.04 Настроить акции" as UC_SetupPromotions
-  
-    usecase "UC.04.01 Настроить технологические карты" as UC_ConfigureRecipes
-    usecase "UC.05.01 Мониторинг производства" as UC_MonitorProduction
-    usecase "UC.05.02 Оповестить о готовности заказа" as UC_NotifyOrderReady
-
-    ' Include-связи (обязательные шаги)
-    UC_PlaceOrder ..> UC_ViewMenu : include
-    UC_PlaceOrder ..> UC_AddToCart : include
-    UC_PlaceOrder ..> UC_MakePayment : include
-    UC_PlaceOrder ..> UC_GetReceipt : include
-    UC_PlaceOrder ..> UC_CheckLoyalty : include
-
-    UC_ProcessRefund <|.. UC_CashRefund 
-    UC_ProcessRefund <|.. UC_CardRefund 
-
-    UC_ManageMenu ..> UC_AddMenuItem : include
-    UC_ManageMenu ..> UC_ChangePrice : include
-    UC_ManageMenu ..> UC_SetupPromotions : include
-
-    ' Extend-связи (условные/дополнительные шаги)
-    UC_CheckLoyalty <.. UC_RegisterLoyalty : extends
-    UC_CheckLoyalty <.. UC_UseLoyaltyPoints : extends
-    UC_MakePayment <.. UC_ApplyBusinessLunchDiscount : extends
-    UC_MakePayment <.. UC_ApplyFreeGift : extends
+<style>
+.zoomable {
+    max-width: 100%;
+    max-height: 600px; /* Ограничиваем высоту */
+    cursor: zoom-in;
+    border: 1px solid #ddd;
+    padding: 10px;
+    object-fit: contain; /* Важно! Сохраняет пропорции */
+    display: block;
+    margin: 0 auto;
 }
 
-' Связи акторов с Use Case
-Guest --> UC_PlaceOrder
-Guest --> UC_ViewMenu
-Guest --> UC_RegisterLoyalty
-
-HospitalityManager --> UC_ProcessRefund
-HospitalityManager --> UC_NotifyOrderReady
-
-AssortmentManager --> UC_ManageMenu
-AssortmentManager --> UC_ConfigureRecipes
-
-ProductionSystem --> UC_MonitorProduction
-ProductionSystem --> UC_NotifyOrderReady
-
-@enduml
-```
+.zoomable:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+</style>
 
 ## 6.2.2 Описание UseCase, реализуемых в рамках MVP
 
