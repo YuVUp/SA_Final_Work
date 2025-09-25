@@ -4,13 +4,13 @@ nav:
   - Главная: index.md
   - Документация:
     - Глава 1: glossary.md
-    - Глава 2: general_info.md  
+    - Глава 2: general_info.md
     - Глава 3: goals.md
     - Глава 4: object_param.md
-    - Глава 5: business_processes.md  
+    - Глава 5: business_processes.md
     - Глава 6: system_requirements.md
     - Глава 7: information_model.md
-    - Глава 8: component_architecture.md 
+    - Глава 8: component_architecture.md
     - Глава 9: integration _interaction.md
     - Глава 10: user_interface.md
     - Глава 11: api.md
