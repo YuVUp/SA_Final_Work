@@ -11,11 +11,13 @@
 <style>
 .zoomable {
     max-width: 100%;
-    height: auto;
+    max-height: 600px; /* Ограничиваем высоту */
     cursor: zoom-in;
-    transition: transform 0.3s ease;
     border: 1px solid #ddd;
     padding: 10px;
+    object-fit: contain; /* Важно! Сохраняет пропорции */
+    display: block;
+    margin: 0 auto;
 }
 
 .zoomable:hover {
