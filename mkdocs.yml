@@ -71,3 +71,4 @@ markdown_extensions:
 plugins:
    - swagger-ui-tag
    - mermaid2
+   - plantuml
