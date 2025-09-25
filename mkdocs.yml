@@ -67,4 +67,3 @@ plugins:
    - search
    - swagger-ui-tag
    - mermaid2
-   - with-puml
