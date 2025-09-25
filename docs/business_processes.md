@@ -5,7 +5,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp; Оформление заказа через приложение
 
-[![Оформление заказа через приложение](diagrams/making_order.svg){: .zoomable }](diagrams/making_order.png){: target="_blank" }
+[![Оформление заказа через приложение](diagrams/making_order.png){: .zoomable }](diagrams/making_order.png){: target="_blank" }
 
 
 <style>
