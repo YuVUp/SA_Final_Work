@@ -1,4 +1,4 @@
-@startuml
+@startuml UseCase's MVP
 left to right direction
 
 actor "Посетитель" as Guest
