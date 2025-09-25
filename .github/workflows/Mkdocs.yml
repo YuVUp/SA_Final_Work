@@ -22,14 +22,12 @@ jobs:
           python-version: 3.9
       - run: pip install \
             mkdocs-material \
-            markdown-exec \
             mkdocs-mermaid2-plugin \
             pillow \
             cairosvg \
             beautifulsoup4>=4.11.1 \
             mkdocs-swagger-ui-tag \
-            plantuml-markdown \
-            mkdocs-diagrams
+            plantuml
       - run: mkdocs gh-deploy --force
   deploy_mkdocs:
     needs: build_mkdocs
