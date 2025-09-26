@@ -3,7 +3,7 @@ site_name: Приложение для заказа и система опове
 nav:
   - Главная: index.md
   - Документация:
-    - Глава 1: 1_glossary.md
+    - Глава 1 Глоссарий: 1_glossary.md
     - Глава 2: 2_general_info.md
     - Глава 3: 3_goals.md
     - Глава 4: 4_object_param.md
