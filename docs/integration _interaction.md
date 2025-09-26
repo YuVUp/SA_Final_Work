@@ -3,6 +3,15 @@
 
 [![Оформление заказа через приложение](diagrams/sequence_diagram.jpg){: .hover-zoom }](diagrams/sequence_diagram.jpg){: target="_blank" }
 
+
+```mermaid
+    graph TD;
+        A-->B;
+        A-->C;
+        B-->D;
+        C-->D;
+```
+
 <style>
 .hover-zoom {
     max-width: 100%;
