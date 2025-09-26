@@ -44,44 +44,6 @@ paths:
           description: Неверные учетные данные
         '500':
           description: Внутренняя ошибка сервера
-
-  /settings/language:
-    patch:
-      tags: 
-        - Настройки
-      security:
-        - bearerAuth: []
-      summary: Смена языка интерфейса
-      description: Изменяет язык интерфейса приложения (RU/EN переключатель)
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - language
-              properties:
-                language:
-                  type: string
-                  enum: ['ru', 'en']
-                  example: "en"
-                  description: Код языка
-      responses:
-        '200':
-          description: Язык успешно изменен
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  message:
-                    type: string
-                    example: "Язык изменен на English"
-        '400':
-          description: Неверный код языка
-        '401':
-          description: Пользователь не авторизован
   /home:
     get:
       tags: 
