@@ -1037,6 +1037,177 @@
 </tbody>
 </table>
 <h2 id="84">8.4. Описание компонентов</h2>
+<h1 id="84_1">8.4. Описание компонентов системы</h1>
+<h2 id="841">8.4.1. Граница системы: "Приложение Робот и точка"</h2>
+<p>Данная граница определяет общие рамки разрабатываемого приложения. </p>
+<h2 id="842-actors">8.4.2. Внешние роли (Actors)</h2>
+<h3 id="_1">Посетитель</h3>
+<ul>
+<li><strong>Тип:</strong> Внешний пользователь</li>
+<li><strong>Назначение:</strong> Взаимодействует с системой через приложение или веб-интерфейс с целью оформления заказов</li>
+</ul>
+<h3 id="_2">Сотрудник</h3>
+<ul>
+<li><strong>Тип:</strong> Внутренний пользователь</li>
+<li><strong>Назначение:</strong> Персонал ресторана, использующий систему для управления заказами, меню и мониторинга работы</li>
+</ul>
+<h2 id="843-frontend">8.4.3. Клиентские приложения (Frontend)</h2>
+<h3 id="-">Веб-клиент</h3>
+<ul>
+<li><strong>Тип:</strong> Single-Page Application (SPA)</li>
+<li><strong>Технология:</strong> React</li>
+<li><strong>Назначение:</strong> Основной интерфейс для Посетителей</li>
+<li><strong>Функционал:</strong> Просмотр меню, оформление и отслеживание заказов</li>
+<li><strong>Взаимодействие:</strong> HTTPS → API Gateway (1)</li>
+</ul>
+<h3 id="_3">Мобильное приложение</h3>
+<ul>
+<li><strong>Тип:</strong> Мобильное приложение</li>
+<li><strong>Технология:</strong> iOS/Android</li>
+<li><strong>Назначение:</strong> Аналог Веб-клиента для мобильных устройств</li>
+<li><strong>Взаимодействие:</strong> HTTPS → API Gateway (2)</li>
+</ul>
+<h3 id="_4">Терминал сотрудника</h3>
+<ul>
+<li><strong>Тип:</strong> Внутреннее приложение</li>
+<li><strong>Технология:</strong> Internal App</li>
+<li><strong>Назначение:</strong> Управление заказами в реальном времени</li>
+<li><strong>Взаимодействие:</strong> HTTPS → API Gateway (3)</li>
+</ul>
+<h3 id="_5">Табло заказов</h3>
+<ul>
+<li><strong>Тип:</strong> Внутреннее табло (Dashboard)</li>
+<li><strong>Технология:</strong> Internal Tableau</li>
+<li><strong>Назначение:</strong> Отображение актуальной информации по заказу</li>
+<li><strong>Взаимодействие:</strong> HTTPS → API Gateway (4)</li>
+</ul>
+<h3 id="_6">Сервисный портал</h3>
+<ul>
+<li><strong>Тип:</strong> Внутренний портал</li>
+<li><strong>Технология:</strong> Internal Portal</li>
+<li><strong>Назначение:</strong> Управление меню, аналитика и настройки системы</li>
+<li><strong>Взаимодействие:</strong> HTTPS → API Gateway (5)</li>
+</ul>
+<h2 id="844-backend-services">8.4.4. Бэкенд-сервисы (Backend Services)</h2>
+<h3 id="api-gateway">API Gateway</h3>
+<ul>
+<li><strong>Тип:</strong> Шлюз API</li>
+<li><strong>Технология:</strong> Nginx / Spring Cloud Gateway</li>
+<li><strong>Назначение:</strong> Единая точка входа, маршрутизация, аутентификация</li>
+<li><strong>Взаимодействие:</strong> Принимает запросы 1-5, перенаправляет на сервисы 6-9</li>
+</ul>
+<h3 id="authentication">Сервис аутентификации (Authentication)</h3>
+<ul>
+<li><strong>Тип:</strong> Бэкенд-сервис</li>
+<li><strong>Технология:</strong> Spring Boot</li>
+<li><strong>Назначение:</strong> Аутентификация и авторизация пользователей</li>
+<li><strong>Взаимодействие:</strong> Запросы от API Gateway (6), БД аутентификации (18)</li>
+</ul>
+<h3 id="orders">Сервис заказов (Orders)</h3>
+<ul>
+<li><strong>Тип:</strong> Бэкенд-сервис</li>
+<li><strong>Технология:</strong> Spring Boot</li>
+<li><strong>Назначение:</strong> Управление жизненным циклом заказов</li>
+<li><strong>Взаимодействие:</strong> </li>
+<li>Запросы от API Gateway (7)</li>
+<li>Использует Сервис меню (11) и Сервис оплаты (12)</li>
+<li>БД заказов (19)</li>
+<li>Публикует события, связанные с заказом (13)</li>
+</ul>
+<h3 id="menu">Сервис меню (Menu)</h3>
+<ul>
+<li><strong>Тип:</strong> Бэкенд-сервис</li>
+<li><strong>Технология:</strong> Spring Boot</li>
+<li><strong>Назначение:</strong> Управление данными меню</li>
+<li><strong>Взаимодействие:</strong> Запросы от API Gateway (8) и Сервиса заказов (11), БД меню (20)</li>
+</ul>
+<h3 id="payment">Сервис оплаты (Payment)</h3>
+<ul>
+<li><strong>Тип:</strong> Бэкенд-сервис</li>
+<li><strong>Технология:</strong> Spring Boot</li>
+<li><strong>Назначение:</strong> Обработка платежей</li>
+<li><strong>Взаимодействие:</strong> </li>
+<li>Запросы от Сервиса заказов (12)</li>
+<li>Интеграция с Эквайринг (22)</li>
+<li>Публикует события, связанные с платежами (14)</li>
+</ul>
+<h2 id="845">8.4.5. Сервисы уведомлений и интеграции</h2>
+<h3 id="_7">Брокер сообщений</h3>
+<ul>
+<li><strong>Тип:</strong> Message Broker</li>
+<li><strong>Технология:</strong> RabbitMQ / Kafka</li>
+<li><strong>Назначение:</strong> Асинхронное взаимодействие через события</li>
+<li><strong>Взаимодействие:</strong> Принимает события 13-14, рассылает подписчикам 15-17</li>
+</ul>
+<h3 id="notifications">Сервис уведомлений (Notifications)</h3>
+<ul>
+<li><strong>Тип:</strong> Бэкенд-сервис</li>
+<li><strong>Технология:</strong> Spring Boot</li>
+<li><strong>Назначение:</strong> Отправка уведомлений пользователям</li>
+<li><strong>Взаимодействие:</strong> Подписка на события (15), БД уведомлений (21)</li>
+</ul>
+<h3 id="1">Сервис интеграции с 1С</h3>
+<ul>
+<li><strong>Тип:</strong> Бэкенд-сервис</li>
+<li><strong>Технология:</strong> Spring Boot</li>
+<li><strong>Назначение:</strong> Синхронизация данных с 1С</li>
+<li><strong>Взаимодействие:</strong> Подписка на события (16), HTTPS/ODATA → 1С (23)</li>
+</ul>
+<h3 id="_8">Сервис управления роботами</h3>
+<ul>
+<li><strong>Тип:</strong> Бэкенд-сервис</li>
+<li><strong>Технология:</strong> Spring Boot</li>
+<li><strong>Назначение:</strong> Управление автоматизированными системами</li>
+<li><strong>Взаимодействие:</strong> Подписка на события (17), MQTT/WebSockets → Система управления роботами (24)</li>
+</ul>
+<h2 id="846-data-storage">8.4.6. Базы данных (Data Storage)</h2>
+<h3 id="_9">База данных аутентификации</h3>
+<ul>
+<li><strong>Тип:</strong> Реляционная БД</li>
+<li><strong>Технология:</strong> PostgreSQL</li>
+<li><strong>Назначение:</strong> Учетные данные пользователей, роли, сессии</li>
+<li><strong>Использование:</strong> Сервис аутентификации (18)</li>
+</ul>
+<h3 id="_10">База данных заказов</h3>
+<ul>
+<li><strong>Тип:</strong> Реляционная БД</li>
+<li><strong>Технология:</strong> PostgreSQL</li>
+<li><strong>Назначение:</strong> Информация о заказах</li>
+<li><strong>Использование:</strong> Сервис заказов (19)</li>
+</ul>
+<h3 id="_11">База данных меню</h3>
+<ul>
+<li><strong>Тип:</strong> Реляционная БД</li>
+<li><strong>Технология:</strong> PostgreSQL</li>
+<li><strong>Назначение:</strong> Данные меню, цены, остатки</li>
+<li><strong>Использование:</strong> Сервис меню (20)</li>
+</ul>
+<h3 id="_12">База данных уведомлений</h3>
+<ul>
+<li><strong>Тип:</strong> Реляционная БД</li>
+<li><strong>Технология:</strong> PostgreSQL</li>
+<li><strong>Назначение:</strong> История и шаблоны уведомлений</li>
+<li><strong>Использование:</strong> Сервис уведомлений (21)</li>
+</ul>
+<h2 id="847">8.4.7. Внешние программные системы</h2>
+<h3 id="_13">Эквайринг</h3>
+<ul>
+<li><strong>Тип:</strong> Внешняя система</li>
+<li><strong>Назначение:</strong> Платежная система</li>
+<li><strong>Взаимодействие:</strong> Вызов от Сервиса оплаты через HTTPS API (22)</li>
+</ul>
+<h3 id="1c">1C:Предприятие</h3>
+<ul>
+<li><strong>Тип:</strong> Внешняя ERP-система</li>
+<li><strong>Назначение:</strong> Корпоративная система учета</li>
+<li><strong>Взаимодействие:</strong> HTTPS/ODATA через Сервис интеграции (23)</li>
+</ul>
+<h3 id="_14">Система управления роботами</h3>
+<ul>
+<li><strong>Тип:</strong> Внешняя система</li>
+<li><strong>Назначение:</strong> Управление аппаратным обеспечением</li>
+<li><strong>Взаимодействие:</strong> MQTT/WebSockets через Сервис управления роботами (24)</li>
+</ul>
 
 
 
