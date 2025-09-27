@@ -1,213 +1,107 @@
 
-<!doctype html>
-<html lang="ru" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-        <link rel="prev" href="../5_business_processes/">
-      
-      
-        <link rel="next" href="../7_information_model/">
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
-    
-    
-      
-        <title>Глава 6 Требования к системе - Приложение для заказа и система оповещения</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
-      
-      
+<!DOCTYPE html>
 
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#6" class="md-skip">
+<html class="no-js" lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../5_business_processes/" rel="prev"/>
+<link href="../7_information_model/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.20" name="generator"/>
+<title>Глава 6 Требования к системе - Приложение для заказа и система оповещения</title>
+<link href="../assets/stylesheets/main.e53b48f4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="purple" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#6">
           Перейти к содержанию
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href=".." title="Приложение для заказа и система оповещения" class="md-header__button md-logo" aria-label="Приложение для заказа и система оповещения" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Верхний колонтитул" class="md-header__inner md-grid">
+<a aria-label="Приложение для заказа и система оповещения" class="md-header__button md-logo" data-md-component="logo" href=".." title="Приложение для заказа и система оповещения">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Приложение для заказа и система оповещения
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Глава 6 Требования к системе
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
-      </label>
-    
-  
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="purple" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="lime" data-md-color-media="" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+</label>
 </form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Поиск">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Поиск" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Поиск" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Поиск" class="md-search__options">
+<button aria-label="Очистить" class="md-search__icon md-icon" tabindex="-1" title="Очистить" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Инициализация поиска
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
-      
-    
-    
-  </nav>
-  
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+<div class="md-container" data-md-component="container">
+<nav aria-label="Вкладки" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
         
   
   
@@ -216,987 +110,576 @@
   Главная
 
       </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../1_glossary/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../1_glossary/">
           
   
   
   Документация
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../diagrams/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../diagrams/">
           
   
   
   Ресурсы
 
         </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
+</li>
+</ul>
+</div>
 </nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Навигация" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Приложение для заказа и система оповещения" class="md-nav__button md-logo" aria-label="Приложение для заказа и система оповещения" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Навигация" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Приложение для заказа и система оповещения" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Приложение для заказа и система оповещения">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
     Приложение для заказа и система оповещения
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
     Главная
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
     Документация
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
             Документация
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../1_glossary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1_glossary/">
+<span class="md-ellipsis">
     Глава 1 Глоссарий
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2_general_info/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2_general_info/">
+<span class="md-ellipsis">
     Глава 2 Общие сведения
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3_goals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3_goals/">
+<span class="md-ellipsis">
     Глава 3 Назначение и цели
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4_object_param/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4_object_param/">
+<span class="md-ellipsis">
     Глава 4 Характеристика объекта
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../5_business_processes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5_business_processes/">
+<span class="md-ellipsis">
     Глава 5 Описание бизнес-процессов
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
     Глава 6 Требования к системе
     
   </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
     Глава 6 Требования к системе
     
   </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Содержание
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#61" class="md-nav__link">
-    <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61">
+<span class="md-ellipsis">
       6.1 Требования к системе в целом
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#611" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#611">
+<span class="md-ellipsis">
       6.1.1 Функциональные требования
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#612" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#612">
+<span class="md-ellipsis">
       6.1.2 Нефункциональные требования
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6.1.2 Нефункциональные требования">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="6.1.2 Нефункциональные требования" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
       Производительность
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
       Безопасность
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
       Масштабируемость
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
       Надежность
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
       Совместимость
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
       Доступность
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
       Удобство использования
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
       Концептуальная целостность
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
       Поддерживаемость
     </span>
-  </a>
-  
+</a>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#62" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62">
+<span class="md-ellipsis">
       6.2 Требования к функциям, выполняемым системой
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6.2 Требования к функциям, выполняемым системой">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#621-use-ase" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="6.2 Требования к функциям, выполняемым системой" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#621-use-ase">
+<span class="md-ellipsis">
       6.2.1. Use Сase диаграмма
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#622-usecase-mvp" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#622-usecase-mvp">
+<span class="md-ellipsis">
       6.2.2 Описание UseCase, реализуемых в рамках MVP
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6.2.2 Описание UseCase, реализуемых в рамках MVP">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#6221-uc0101" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="6.2.2 Описание UseCase, реализуемых в рамках MVP" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6221-uc0101">
+<span class="md-ellipsis">
       6.2.2.1 Вариант использования: UC.01.01 «Оформить заказ»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6222-uc0301" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6222-uc0301">
+<span class="md-ellipsis">
       6.2.2.2 Вариант использования: UC.03.01 «Управление меню и акциями»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6223-uc0401" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6223-uc0401">
+<span class="md-ellipsis">
       6.2.2.3 Вариант использования: UC.04.01 «Настроить технологические карты»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6224-uc0201" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6224-uc0201">
+<span class="md-ellipsis">
       6.2.2.4 Вариант использования: UC.02.01 «Обработать возврат денег»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6225-uc0501" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6225-uc0501">
+<span class="md-ellipsis">
       6.2.2.5 Вариант использования: UC.05.01 «Оповестить о готовности заказа»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6226-uc0601" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6226-uc0601">
+<span class="md-ellipsis">
       6.2.2.6 Вариант использования: UC.06.01 «Мониторинг производства»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6227-uc0102" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6227-uc0102">
+<span class="md-ellipsis">
       6.2.2.7 Вариант использования: UC.01.02 «Посмотреть меню»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6228-uc0103" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6228-uc0103">
+<span class="md-ellipsis">
       6.2.2.8 Вариант использования: UC.01.03 «Проверить статус заказа»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6229-uc0104" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6229-uc0104">
+<span class="md-ellipsis">
       6.2.2.9 Вариант использования: UC.01.04 «Проверить программу лояльности»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62210-uc0105" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62210-uc0105">
+<span class="md-ellipsis">
       6.2.2.10 Вариант использования: UC.01.05 «Добавить позиции в корзину»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62211-uc0106" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62211-uc0106">
+<span class="md-ellipsis">
       6.2.2.11 Вариант использования: UC.01.06 «Произвести оплату»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62212-uc0302" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62212-uc0302">
+<span class="md-ellipsis">
       6.2.2.12 Вариант использования: UC.03.02 «Добавить новую позицию»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62213-uc0303" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62213-uc0303">
+<span class="md-ellipsis">
       6.2.2.13 Вариант использования: UC.03.03 «Изменить цену»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62214-uc0304" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62214-uc0304">
+<span class="md-ellipsis">
       6.2.2.14 Вариант использования: UC.03.04 «Настроить акции»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62215-uc0107" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62215-uc0107">
+<span class="md-ellipsis">
       6.2.2.15 Вариант использования: UC.01.07 «Зарегистрироваться в программе лояльности»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62216-uc0108" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62216-uc0108">
+<span class="md-ellipsis">
       6.2.2.16 Вариант использования: UC.01.08 «Использовать бонусные баллы»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62217-uc0109-" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62217-uc0109-">
+<span class="md-ellipsis">
       6.2.2.17 Вариант использования: UC.01.09 «Применить скидку бизнес-ланч»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#62218-uc0110" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62218-uc0110">
+<span class="md-ellipsis">
       6.2.2.18 Вариант использования: UC.01.10 «Добавить подарок»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#623-usecase" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#623-usecase">
+<span class="md-ellipsis">
       6.2.3. Список UseCase, реализуемых в рамках первого релиза
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6.2.3. Список UseCase, реализуемых в рамках первого релиза">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#6231-uc0101-uc0105" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="6.2.3. Список UseCase, реализуемых в рамках первого релиза" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6231-uc0101-uc0105">
+<span class="md-ellipsis">
       6.2.3.1 Вариант использования: UC.01.01 «Оформить заказ» (включает UC.01.05 «Добавить позиции в корзину»)
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6232-uc0106" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6232-uc0106">
+<span class="md-ellipsis">
       6.2.3.2 Вариант использования: UC.01.06 «Произвести оплату»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6233-uc0601" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6233-uc0601">
+<span class="md-ellipsis">
       6.2.3.3 Вариант использования: UC.06.01 «Мониторинг производства» (Базовая версия)
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6234-uc0501" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6234-uc0501">
+<span class="md-ellipsis">
       6.2.3.4 Вариант использования: UC.05.01 «Оповестить о готовности заказа»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6235-uc0102" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6235-uc0102">
+<span class="md-ellipsis">
       6.2.3.5 Вариант использования: UC.01.02 «Просмотреть меню»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6236-uc0107" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6236-uc0107">
+<span class="md-ellipsis">
       6.2.3.6 Вариант использования: UC.01.07 «Получить талон с номером»
     </span>
-  </a>
-  
+</a>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#6237-uc0105-uc0101" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6237-uc0105-uc0101">
+<span class="md-ellipsis">
       6.2.3.7 Вариант использования: UC.01.05 «Добавить позиции в корзину» (Детализация в контексте UC.01.01)
     </span>
-  </a>
-  
+</a>
 </li>
-        
-      </ul>
-    </nav>
-  
+<li class="md-nav__item">
+<a class="md-nav__link" href="#624-user-story">
+<span class="md-ellipsis">
+      6.2.4 User Story (Пользовательские истории)
+    </span>
+</a>
 </li>
-      
-    </ul>
-  
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uc_addtocart">
+<span class="md-ellipsis">
+      UC_AddToCart (Добавить позиции в корзину)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uc_makepayment">
+<span class="md-ellipsis">
+      UC_MakePayment (Произвести оплату)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uc_getreceipt">
+<span class="md-ellipsis">
+      UC_GetReceipt (Получить талон с номером)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uc_monitorproduction">
+<span class="md-ellipsis">
+      UC_MonitorProduction (Мониторинг производства)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#uc_notifyorderready">
+<span class="md-ellipsis">
+      UC_NotifyOrderReady (Оповестить о готовности заказа)
+    </span>
+</a>
+<nav aria-label="UC_NotifyOrderReady (Оповестить о готовности заказа)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#625">
+<span class="md-ellipsis">
+      6.2.5 Карта пользовательских историй
+    </span>
+</a>
+</li>
+</ul>
 </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../7_information_model/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7_information_model/">
+<span class="md-ellipsis">
     Глава 7 Информационная модель
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../8_%D1%81omponent_architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8_%D1%81omponent_architecture/">
+<span class="md-ellipsis">
     Глава 8 Компонентная архитектура
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../9_integration_interaction/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9_integration_interaction/">
+<span class="md-ellipsis">
     Глава 9 Интеграционное взаимодействие
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10_user_interface/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10_user_interface/">
+<span class="md-ellipsis">
     Глава 10 Пользовательский интерфейс
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11_api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11_api/">
+<span class="md-ellipsis">
     Глава 11 API приложения
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../12_dev_assignments/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../12_dev_assignments/">
+<span class="md-ellipsis">
     Глава 12 Постановки на разработку
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
     Ресурсы
     
   </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
             Ресурсы
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../diagrams/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../diagrams/">
+<span class="md-ellipsis">
     Диаграммы
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../wf/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../wf/">
+<span class="md-ellipsis">
     Файрфреймы
     
   </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
+</a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
 <h1 id="6">6 Требования к системе</h1>
 <h2 id="61">6.1 Требования к системе в целом</h2>
 <h2 id="611">6.1.1 Функциональные требования</h2>
@@ -1250,7 +733,7 @@ NFREL3 Время потери данных за время, не более 1 �
 <h2 id="62">6.2 Требования к функциям, выполняемым системой</h2>
 <h3 id="621-use-ase">6.2.1.  Use Сase диаграмма</h3>
 <p>Основные функции системы представлены в виде UseCase диаграммы. </p>
-<p><a href="../diagrams/usecasediagram1.jpg" target="_blank"><img alt="Оформление заказа через приложение" class="hover-zoom" src="../diagrams/usecasediagram1.jpg" /></a></p>
+<p><a href="../diagrams/usecasediagram1.jpg" target="_blank"><img alt="Оформление заказа через приложение" class="hover-zoom" src="../diagrams/usecasediagram1.jpg"/></a></p>
 <style>
 .hover-zoom {
     max-width: 100%;
@@ -1270,7 +753,6 @@ NFREL3 Время потери данных за время, не более 1 �
     position: relative;
 }
 </style>
-
 <h3 id="622-usecase-mvp">6.2.2 Описание UseCase, реализуемых в рамках MVP</h3>
 <h4 id="6221-uc0101">6.2.2.1 Вариант использования: UC.01.01 «Оформить заказ»</h4>
 <p>Описание варианта использования (назначение):
@@ -2173,7 +1655,7 @@ NFREL3 Время потери данных за время, не более 1 �
 - Система отображает сообщение "Подарок временно недоступен"
 - Вариант использования завершается</p>
 <h3 id="623-usecase">6.2.3.  Список UseCase, реализуемых в рамках первого релиза</h3>
-<p><a href="../diagrams/first_release.jpg" target="_blank"><img alt="Оформление заказа через приложение" class="hover-zoom" src="../diagrams/first_release.jpg" /></a></p>
+<p><a href="../diagrams/first_release.jpg" target="_blank"><img alt="Оформление заказа через приложение" class="hover-zoom" src="../diagrams/first_release.jpg"/></a></p>
 <style>
 .hover-zoom {
     max-width: 100%;
@@ -2193,7 +1675,6 @@ NFREL3 Время потери данных за время, не более 1 �
     position: relative;
 }
 </style>
-
 <h4 id="6231-uc0101-uc0105">6.2.3.1 <strong>Вариант использования: UC.01.01 «Оформить заказ» (включает UC.01.05 «Добавить позиции в корзину»)</strong></h4>
 <p><strong>Основной поток:</strong>
 1. Посетитель подходит к киоску и нажимает «Сделать заказ»
@@ -2312,67 +1793,264 @@ NFREL3 Время потери данных за время, не более 1 �
 3. Система пересчитывает и обновляет общую сумму.</p>
 <p><strong>Исключения:</strong>
 - <strong>EX-1: Потеря соединения с сервером</strong> - При попытке добавить позицию в корзину система показывает сообщение «Нет соединения с сервером. Корзина временно недоступна. Попробуйте позже.»</p>
+<h3 id="624-user-story">6.2.4 User Story (Пользовательские истории)</h3>
+<p><strong>UC_ViewMenu (Просмотреть меню)</strong></p>
+<p><strong>US-01: Просмотр категорий меню</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> видеть главные категории блюд (бургеры, закуски, напитки, десерт) на начальном экране
+*   <strong>Чтобы:</strong> быстро сориентироваться и выбрать нужный раздел меню.</p>
+<p><strong>AC 01.01: Отображение главных категорий</strong>
+<em>Given:</em> Система загружена, меню доступно.
+<em>When:</em> Посетитель открывает экран меню.
+<em>Then:</em> Система отображает кнопки или вкладки с названиями основных категорий (например, "Все", "Горячее", "Напитки", "Десерт").</p>
+<p><strong>AC 01.02: Навигация по категориям</strong>
+<em>Given:</em> Посетитель находится на экране меню и видит список категорий.
+<em>When:</em> Он нажимает на конкретную категорию (например, "Напитки").
+<em>Then:</em> Система скрывает другие категории и отображает список блюд, принадлежащих только выбранной категории.</p>
+<p><strong>US-02: Просмотр деталей блюда</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> видеть для каждого блюда название, изображение, описание и цену
+*   <strong>Чтобы:</strong> принять осознанное решение о выборе.</p>
+<p><strong>AC 02.01: Базовая информация на карточке блюда</strong>
+<em>Given:</em> Посетитель открыл категорию с доступными блюдами.
+<em>When:</em> Система отображает список блюд.
+<em>Then:</em> Каждая карточка блюда содержит четкое изображение, название, краткое описание состава и цену.</p>
+<p><strong>AC 02.02: Корректное отображение контента</strong>
+<em>Given:</em> В системе заведено блюдо без изображения.
+<em>When:</em> Это блюдо отображается в меню.
+<em>Then:</em> Система показывает стандартную картинку-заглушку, но название, описание и цена отображаются корректно.</p>
+<h3 id="uc_addtocart"><strong>UC_AddToCart (Добавить позиции в корзину)</strong></h3>
+<p><strong>US-03: Добавление блюда в корзину</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> нажимать одну кнопку "Добавить" на карточке блюда в меню
+*   <strong>Чтобы:</strong> быстро добавлять понравившиеся позиции в свой заказ.</p>
+<p><strong>AC 03.01: Добавление единицы товара</strong>
+<em>Given:</em> Посетитель просматривает карточку доступного блюда.
+<em>When:</em> Он нажимает кнопку "Добавить" / "+" на карточке.
+<em>Then:</em> Система добавляет 1 (одну) единицу этого блюда в корзину, а счетчик товаров в корзине в шапке экрана увеличивается на 1.</p>
+<p><strong>AC 03.02: Визуальное подтверждение добавления</strong>
+<em>Given:</em> Посетитель нажимает кнопку "Добавить".
+<em>When:</em> Кнопка нажата.
+<em>Then:</em> Рядом с кнопкой или на ней ненадолго появляется анимация или текст "Добавлено", подтверждающие действие.</p>
+<p><strong>AC 03.03: Повторное добавление одного блюда</strong>
+<em>Given:</em> Блюдо уже находится в корзине.
+<em>When:</em> Посетитель снова нажимает кнопку "Добавить" для этого же блюда в меню.
+<em>Then:</em> Система увеличивает количество существующей позиции в корзине на 1, а не создает дубликат.</p>
+<p><strong>US-04: Просмотр и редактирование состава заказа</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> видеть список добавленных блюд, изменять их количество и удалять позиции
+*   <strong>Чтобы:</strong> контролировать состав и сумму своего заказа перед оплатой.</p>
+<p><strong>AC 04.01: Просмотр состава заказа</strong>
+<em>Given:</em> Посетитель перешел на экран "Проверка заказа".
+<em>When:</em> Экран загружается.
+<em>Then:</em> Система отображает список всех добавленных позиций. Для каждой позиции указано название, количество и цена за единицу.</p>
+<p><strong>AC 04.02: Изменение количества в списке</strong>
+<em>Given:</em> Посетитель находится на экране "Проверка заказа" и видит список своих товаров.
+<em>When:</em> Он использует элементы управления ("+" / "-") для изменения количества конкретной позиции.
+<em>Then:</em> Количество, стоимость позиции и общая сумма заказа немедленно пересчитываются и отображаются.</p>
+<p><strong>AC 04.03: Удаление позиции из состава заказа</strong>
+<em>Given:</em> Посетитель находится на экране Проверка заказа
+<em>When:</em> Он нажимает кнопку "Удалить" для определенной позиции.
+<em>Then:</em> Позиция немедленно удаляется из списка, общая сумма заказа пересчитывается.</p>
+<p><strong>US-05: Отображение суммы заказа</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> видеть общую сумму моего заказа в корзине и в шапке интерфейса
+*   <strong>Чтобы:</strong> понимать итоговую стоимость перед переходом к оплате.</p>
+<p><strong>AC 05.01: Отображение суммы в корзине</strong>
+<em>Given:</em> Посетитель открыл экран корзины, и в ней есть товары.
+<em>When:</em> Страница корзины загружена или изменено количество товаров.
+<em>Then:</em> В нижней части экрана корзины четко отображается итоговая сумма к оплате, рассчитанная как сумма стоимостей всех позиций.</p>
+<p><strong>AC 05.02: Индикатор суммы в шапке</strong>
+<em>Given:</em> Посетитель находится на любом экране киоска (главная, меню, корзина).
+<em>When:</em> В корзину добавлен хотя бы один товар.
+<em>Then:</em> В шапке экрана (например, рядом с иконкой корзины) постоянно отображается общая сумма текущего заказа.</p>
+<p><strong>AC 05.03: Отображение детализации суммы</strong>
+<em>Given:</em> Посетитель перешел на экран "Проверка заказа".
+<em>When:</em> Экран загружен.
+<em>Then:</em> Внизу экрана отображаются "Промежуточный итог" и итоговая сумма "Итого" к оплате.</p>
+<h3 id="uc_makepayment"><strong>UC_MakePayment (Произвести оплату)</strong></h3>
+<p><strong>US-06: Выбор способа оплаты</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> выбирать между оплатой картой и наличными
+*   <strong>Чтобы:</strong> использовать удобный для меня способ расчета.</p>
+<p><strong>AC 06.01: Предоставление выбора способа оплаты</strong>
+<em>Given:</em> Посетитель перешел на экран "Оплата".
+<em>When:</em> Экран загружается.
+<em>Then:</em> Система отображает доступные способы оплаты в виде четких блоков с иконками и текстом.</p>
+<p><strong>AC 06.02: Выбор безналичной оплаты</strong>
+<em>Given:</em> Посетитель находится на экране "Оплата".
+<em>When:</em> Он нажимает на блок "Банковская карта" или "Apple Pay/Google Pay".
+<em>Then:</em> Система переходит к процессу оплаты картой (отображаются поля для ввода данных или запускается NFC-модуль).</p>
+<p><strong>US-07: Безналичная оплата через терминал</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> безопасно оплатить заказ банковской картой через интегрированный терминал
+*   <strong>Чтобы:</strong> быстро завершить транзакцию без использования наличных.</p>
+<p><strong>AC 07.01: Ввод данных карты</strong>
+<em>Given:</em> Посетитель выбрал оплату банковской картой.
+<em>When:</em> Система отображает форму для ввода данных.
+<em>Then:</em> Форма содержит поля "Номер карты" (с форматированием групп по 4 цифры), "Срок действия" (ММ/ГГ) и "CVV".</p>
+<p><strong>AC 07.02: Валидация данных карты</strong>
+<em>Given:</em> Посетитель вводит данные в форму оплаты картой.
+<em>When:</em> Он вводит неверный номер карты (например, неполный) или неверный срок.
+<em>Then:</em> Поле с ошибкой подсвечивается, и под ним появляется текст с пояснением (например, "Неверный номер карты").</p>
+<p><strong>US-08: Оплата наличными через менеджера по гостеприимству</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> иметь возможность оплатить наличными, если карта недоступна
+*   <strong>Чтобы:</strong> не остаться без возможности сделать заказ.</p>
+<p><strong>AC 08.01: Выбор оплаты наличными</strong>
+<em>Given:</em> Посетитель находится на экране "Оплата".
+<em>When:</em> Он нажимает на блок "Наличными при получении".
+<em>Then:</em> Система показывает подтверждение: "Заказ будет передан на кухню. Оплатите наличными при получении у стойки выдачи." и кнопку "Подтвердить заказ".</p>
+<h3 id="uc_getreceipt"><strong>UC_GetReceipt (Получить талон с номером)</strong></h3>
+<p><strong>US-09: Получение бумажного чека</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> получить чек сразу после успешной оплаты
+*   <strong>Чтобы:</strong> иметь подтверждение покупки и номер для получения заказа.</p>
+<p><strong>AC 09.01: Печать чека</strong>
+<em>Given:</em> Оплата заказа прошла успешно.
+<em>When:</em> Система обработала подтверждение оплата.
+<em>Then:</em> Система автоматически отправляет команду на печать чека на подключенный принтер.</p>
+<p><strong>AC 09.02: Содержимое чека</strong>
+<em>Given:</em> Чек отправлен на печать.
+<em>When:</em> Чек распечатан.
+<em>Then:</em> На чеке указан номер заказа, список позиций, итоговая сумма, дата и время.</p>
+<p><strong>US-10: Отображение номера заказа на экране</strong>
+*   <strong>Как:</strong> Посетитель
+*   <strong>Я хочу:</strong> видеть номер моего заказа на экране киоска после оплаты
+*   <strong>Чтобы:</strong> запомнить или сфотографировать номер, если чек потеряется.</p>
+<p><strong>AC 10.01: Отображение номера заказа</strong>
+<em>Given:</em> Оплата прошла успешно.
+<em>When:</em> Система переходит на экран "Заказ принят".
+<em>Then:</em> На экране крупным шрифтом отображается номер заказа (например, "Ваш номер заказа #R-257") и текущий статус ("Готовится").</p>
+<p><strong>AC 10.02: Информация для посетителя</strong>
+<em>Given:</em> Посетитель находится на экране "Заказ принят".
+<em>When:</em> Он просматривает экран.
+<em>Then:</em> На экране присутствует сообщение "Ожидайте уведомления о готовности" и кнопка "Вернуться в меню".</p>
+<p><strong>US-11: Передача заказа на производство</strong>
+*   <strong>Как:</strong> Система
+*   <strong>Я хочу:</strong> автоматически передавать оплаченный заказ в систему производства
+*   <strong>Чтобы:</strong> кухня начала готовить сразу после оплаты.</p>
+<p><strong>AC 11.01: Передача заказа на производство</strong>
+<em>Given:</em> Статус заказа изменился на "Оплачен".
+<em>When:</em> Фиксируется успешная оплата.
+<em>Then:</em> Система немедленно передает полные данные заказа в систему управления производством (кухню).</p>
+<p><strong>AC 11.02: Смена статуса</strong>
+<em>Given:</em> Заказ передан на кухню.
+<em>When:</em> Система производства подтверждает получение.
+<em>Then:</em> Статус заказа в основном интерфейсе меняется на "Готовится".</p>
+<h3 id="uc_monitorproduction"><strong>UC_MonitorProduction (Мониторинг производства)</strong></h3>
+<p><strong>US-12: Просмотр очереди заказов</strong>
+*   <strong>Как:</strong> Менеджер на производстве
+*   <strong>Я хочу:</strong> видеть все текущие заказы с их статусами в реальном времени
+*   <strong>Чтобы:</strong> контролировать загрузку кухни и контролировать процесс.</p>
+<p><strong>AC 12.01: Панель мониторинга</strong>
+<em>Given:</em> Менеджер открыл панель мониторинга производства.
+<em>When:</em> Панель загружается.
+<em>Then:</em> Система отображает список заказов в порядке очереди. Для каждого заказа указан номер, состав и текущий статус ("В очереди", "Готовится", "Готов").</p>
+<h3 id="uc_notifyorderready"><strong>UC_NotifyOrderReady (Оповестить о готовности заказа)</strong></h3>
+<p><strong>US-13: Автоматическое оповещение на табло</strong>
+*   <strong>Как:</strong> Система
+*   <strong>Я хочу:</strong> автоматически отправлять номер готового заказа на табло в зоне выдачи
+*   <strong>Чтобы:</strong> посетитель видел, когда его заказ готов.</p>
+<p><strong>AC 13.01: Уведомление на табло</strong>
+<em>Given:</em> Система производства изменила статус заказа на "Готов".
+<em>When:</em> Это изменение фиксируется.
+<em>Then:</em> Система отправляет номер заказа на табло в зоне выдачи.</p>
+<p><strong>AC 13.02: Сброс уведомления</strong>
+<em>Given:</em> Номер заказа отображается на табло.
+<em>When:</em> Менеджер отмечает заказ как "Выдан" (или проходит 5 минут).
+<em>Then:</em> Номер этого заказа удаляется с табло.</p>
+<p><strong>US-14: Визуальное отображение статуса готовности</strong>
+*   <strong>Как:</strong> Менеджер на производстве
+*   <strong>Я хочу:</strong> видеть на панели мониторинга, какие заказы готовы к выдаче
+*   <strong>Чтобы:</strong> контролировать процесс выдачи и избегать скопления готовых заказов.</p>
+<p><strong>AC 14.01: Выделение готовых заказов в общем списке</strong>
+<em>Given:</em> На панели мониторинга отображается список заказов в статусах "Ожидает приготовления", "Готовится" и "Готов".
+<em>When:</em> Статус заказа изменяется на "Готов".
+<em>Then:</em> Строка с этим заказом автоматически выделяется зеленым цветом. В колонке "Статус" отображается значение "Готов".</p>
+<p><strong>AC 14.02: Сортировка и группировка готовых заказов</strong>
+<em>Given:</em> В системе есть несколько заказов с разными статусами.
+<em>When:</em> Менеджер открывает панель мониторинга.
+<em>Then:</em> Заказы автоматически сортируются по статусу: сверху группа "Готов", ниже "Готовится", затем "Ожидает". Внутри группы заказы сортируются по времени изменения статуса (сначала те, что готовы дольше).</p>
+<p><strong>AC 14.03: Отображение времени нахождения в статусе "Готов"</strong>
+<em>Given:</em> Заказ находится в статусе "Готов".
+<em>When:</em> Менеджер просматривает список на панели мониторинга.
+<em>Then:</em> Рядом с номером заказа в скобках отображается время, прошедшее с момента готовности, в секундах.</p>
+<h4 id="625">6.2.5 Карта пользовательских историй</h4>
+<p>```mermaid
+graph TB
+    %% DOR блок
+    DOR[<b>📋 Definition of Ready (DOR)</b><br/>---<br/>• User Story сформулирована по шаблону<br/>• Критерии приемки определены и тестируемы<br/>• Дизайн-макеты готовы и утверждены<br/>• Бизнес-логика документирована<br/>• Зависимости идентифицированы<br/>• Технические требования определены]</p>
+<pre><code>%% User Stories последовательно
+US01[&lt;b&gt;US-01&lt;/b&gt;&lt;br&gt;Просмотр категорий] --&gt; 
+US02[&lt;b&gt;US-02&lt;/b&gt;&lt;br&gt;Детали блюда] --&gt; 
+US03[&lt;b&gt;US-03&lt;/b&gt;&lt;br&gt;Добавление в корзину] --&gt; 
+US04[&lt;b&gt;US-04&lt;/b&gt;&lt;br&gt;Редактирование заказа] --&gt; 
+US05[&lt;b&gt;US-05&lt;/b&gt;&lt;br&gt;Контроль суммы] --&gt; 
+US06[&lt;b&gt;US-06&lt;/b&gt;&lt;br&gt;Выбор оплаты]
 
+US06 --&gt; US07[&lt;b&gt;US-07&lt;/b&gt;&lt;br&gt;Оплата картой]
+US06 --&gt; US08[&lt;b&gt;US-08&lt;/b&gt;&lt;br&gt;Оплата наличными]
 
+US07 --&gt; US09[&lt;b&gt;US-09&lt;/b&gt;&lt;br&gt;Получение чека]
+US08 --&gt; US09
 
+US09 --&gt; US10[&lt;b&gt;US-10&lt;/b&gt;&lt;br&gt;Номер заказа] --&gt; 
+US11[&lt;b&gt;US-11&lt;/b&gt;&lt;br&gt;Передача на кухню] --&gt; 
+US12[&lt;b&gt;US-12&lt;/b&gt;&lt;br&gt;Мониторинг заказов] --&gt; 
+US13[&lt;b&gt;US-13&lt;/b&gt;&lt;br&gt;Оповещение на табло] --&gt; 
+US14[&lt;b&gt;US-14&lt;/b&gt;&lt;br&gt;Контроль готовности]
 
+%% Общий DOD
+DOD[&lt;b&gt;✅ Definition of Done (DOD)&lt;/b&gt;&lt;br&gt;---&lt;br&gt;• Код написан и соответствует стандартам&lt;br&gt;• Проведен code review&lt;br&gt;• Все тесты пройдены успешно&lt;br&gt;• Локализация выполнена&lt;br&gt;• Документация обновлена&lt;br&gt;• Регрессионное тестирование проведено]
 
+%% Связи DOR и DOD
+DOR -.-&gt; US01
+US14 -.-&gt; DOD
 
+%% Стили
+classDef visitor fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000
+classDef system fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
+classDef manager fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
+classDef dod fill:#f0f9ff,stroke:#0288d1,stroke-width:3px,color:#000,stroke-dasharray: 5 5
+classDef dor fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000
 
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
-
+class US01,US02,US03,US04,US05,US06,US07,US08,US09,US10 visitor
+class US11,US13 system
+class US12,US14 manager
+class DOD dod
+class DOR dor
+```
+</code></pre>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   К началу
 </button>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
-    
-    
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+</body>
 </html>
