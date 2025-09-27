@@ -667,6 +667,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#97" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.7. Протоколы и стандарты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.7. Протоколы и стандарты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#971" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.7.1. Форматы данных
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#972" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.7.2. Безопасность
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -891,11 +924,11 @@
 <h2 id="92">9.2. Ключевые интеграционные точки</h2>
 <h3 id="921-australian-robots">9.2.1. Интеграция с роботизированным производством Australian Robots</h3>
 <p><strong>Назначение</strong>: Передача заказов на приготовление и мониторинг статусов выполнения</p>
-<p><strong>Протокол</strong>: REST API с аутентификацией по API Key
-<strong>Эндпоинт</strong>: <code>POST /api/v1/production/orders</code>
-<strong>Формат данных</strong>: JSON с указанием состава заказа и параметров приготовления
-<strong>Таймаут</strong>: 5 секунд
-<strong>Повторные попытки</strong>: 3 раза с экспоненциальной задержкой</p>
+<p><strong>Протокол</strong>: REST API с аутентификацией по API Key</p>
+<p><strong>Эндпоинт</strong>: <code>POST /api/v1/production/orders</code></p>
+<p><strong>Формат данных</strong>: JSON с указанием состава заказа и параметров приготовления</p>
+<p><strong>Таймаут</strong>: 5 секунд</p>
+<p><strong>Повторные попытки</strong>: 3 раза с экспоненциальной задержкой</p>
 <h3 id="922">9.2.2. Интеграция с платежными системами</h3>
 <p><strong>Назначение:</strong> Обработка онлайн-платежей банковскими картами</p>
 <p><strong>Протокол:</strong> REST API через шлюз </p>
@@ -911,6 +944,16 @@
 <p><strong>Протокол:</strong> REST API с веб-хуками</p>
 <p><strong>Режим:</strong> Обновления в реальном времени при изменениях</p>
 <p><strong>Данные:</strong> Остатки, сроки годности, поступления</p>
+<h2 id="97">9.7. Протоколы и стандарты</h2>
+<h3 id="971">9.7.1. Форматы данных</h3>
+<p><strong>JSON:</strong> Основной формат для REST API</p>
+<p><strong>XML:</strong> Для интеграции с системами производства (технологические карты)</p>
+<p><strong>Protobuf:</strong> Для высоконагруженных внутренних коммуникаций</p>
+<h2 id="972">9.7.2. Безопасность</h2>
+<p><strong>Аутентификация:</strong> JWT tokens + API Keys</p>
+<p><strong>Авторизация:</strong> RBAC на уровне endpoints</p>
+<p><strong>Шифрование:</strong> TLS 1.3 для всех внешних соединений</p>
+<p><strong>Сертификаты:</strong> Let's Encrypt для публичных API</p>
 
 
 
