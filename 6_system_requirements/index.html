@@ -1977,51 +1977,49 @@ NFREL3 Время потери данных за время, не более 1 �
 <em>When:</em> Менеджер просматривает список на панели мониторинга.
 <em>Then:</em> Рядом с номером заказа в скобках отображается время, прошедшее с момента готовности, в секундах.</p>
 <h4 id="625">6.2.5 Карта пользовательских историй</h4>
-<p>```mermaid
-graph TB
+<pre class="mermaid"><code>graph TB
     %% DOR блок
-    DOR[<b>📋 Definition of Ready (DOR)</b><br/>---<br/>• User Story сформулирована по шаблону<br/>• Критерии приемки определены и тестируемы<br/>• Дизайн-макеты готовы и утверждены<br/>• Бизнес-логика документирована<br/>• Зависимости идентифицированы<br/>• Технические требования определены]</p>
-<pre><code>%% User Stories последовательно
-US01[&lt;b&gt;US-01&lt;/b&gt;&lt;br&gt;Просмотр категорий] --&gt; 
-US02[&lt;b&gt;US-02&lt;/b&gt;&lt;br&gt;Детали блюда] --&gt; 
-US03[&lt;b&gt;US-03&lt;/b&gt;&lt;br&gt;Добавление в корзину] --&gt; 
-US04[&lt;b&gt;US-04&lt;/b&gt;&lt;br&gt;Редактирование заказа] --&gt; 
-US05[&lt;b&gt;US-05&lt;/b&gt;&lt;br&gt;Контроль суммы] --&gt; 
-US06[&lt;b&gt;US-06&lt;/b&gt;&lt;br&gt;Выбор оплаты]
+    DOR[Definition of Ready (DOR)&lt;br/&gt;- User Story сформулирована&lt;br/&gt;- Критерии приемки определены&lt;br/&gt;- Дизайн-макеты готовы&lt;br/&gt;- Бизнес-логика документирована&lt;br/&gt;- Зависимости идентифицированы&lt;br/&gt;- Технические требования]
 
-US06 --&gt; US07[&lt;b&gt;US-07&lt;/b&gt;&lt;br&gt;Оплата картой]
-US06 --&gt; US08[&lt;b&gt;US-08&lt;/b&gt;&lt;br&gt;Оплата наличными]
+    %% User Stories последовательно
+    US01[US-01: Просмотр категорий] --&gt; 
+    US02[US-02: Детали блюда] --&gt; 
+    US03[US-03: Добавление в корзину] --&gt; 
+    US04[US-04: Редактирование заказа] --&gt; 
+    US05[US-05: Контроль суммы] --&gt; 
+    US06[US-06: Выбор оплаты]
 
-US07 --&gt; US09[&lt;b&gt;US-09&lt;/b&gt;&lt;br&gt;Получение чека]
-US08 --&gt; US09
+    US06 --&gt; US07[US-07: Оплата картой]
+    US06 --&gt; US08[US-08: Оплата наличными]
 
-US09 --&gt; US10[&lt;b&gt;US-10&lt;/b&gt;&lt;br&gt;Номер заказа] --&gt; 
-US11[&lt;b&gt;US-11&lt;/b&gt;&lt;br&gt;Передача на кухню] --&gt; 
-US12[&lt;b&gt;US-12&lt;/b&gt;&lt;br&gt;Мониторинг заказов] --&gt; 
-US13[&lt;b&gt;US-13&lt;/b&gt;&lt;br&gt;Оповещение на табло] --&gt; 
-US14[&lt;b&gt;US-14&lt;/b&gt;&lt;br&gt;Контроль готовности]
+    US07 --&gt; US09[US-09: Получение чека]
+    US08 --&gt; US09
 
-%% Общий DOD
-DOD[&lt;b&gt;✅ Definition of Done (DOD)&lt;/b&gt;&lt;br&gt;---&lt;br&gt;• Код написан и соответствует стандартам&lt;br&gt;• Проведен code review&lt;br&gt;• Все тесты пройдены успешно&lt;br&gt;• Локализация выполнена&lt;br&gt;• Документация обновлена&lt;br&gt;• Регрессионное тестирование проведено]
+    US09 --&gt; US10[US-10: Номер заказа] --&gt; 
+    US11[US-11: Передача на кухню] --&gt; 
+    US12[US-12: Мониторинг заказов] --&gt; 
+    US13[US-13: Оповещение на табло] --&gt; 
+    US14[US-14: Контроль готовности]
 
-%% Связи DOR и DOD
-DOR -.-&gt; US01
-US14 -.-&gt; DOD
+    %% Общий DOD
+    DOD[Definition of Done (DOD)&lt;br/&gt;- Код написан по стандартам&lt;br/&gt;- Проведен code review&lt;br/&gt;- Все тесты пройдены&lt;br/&gt;- Локализация выполнена&lt;br/&gt;- Документация обновлена&lt;br/&gt;- Регрессионное тестирование]
 
-%% Стили
-classDef visitor fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#000
-classDef system fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
-classDef manager fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#000
-classDef dod fill:#f0f9ff,stroke:#0288d1,stroke-width:3px,color:#000,stroke-dasharray: 5 5
-classDef dor fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px,color:#000
+    %% Связи DOR и DOD
+    DOR -.-&gt; US01
+    US14 -.-&gt; DOD
 
-class US01,US02,US03,US04,US05,US06,US07,US08,US09,US10 visitor
-class US11,US13 system
-class US12,US14 manager
-class DOD dod
-class DOR dor
-```
-</code></pre>
+    %% Стили
+    classDef visitor fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef system fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef manager fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef dod fill:#f0f9ff,stroke:#0288d1,stroke-width:3px,stroke-dasharray: 5 5
+    classDef dor fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
+
+    class US01,US02,US03,US04,US05,US06,US07,US08,US09,US10 visitor
+    class US11,US13 system
+    class US12,US14 manager
+    class DOD dod
+    class DOR dor</code></pre>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
