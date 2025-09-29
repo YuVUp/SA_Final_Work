@@ -12,7 +12,7 @@
 - Категория_товара 
 - Ингредиент 
 
-[![Оформление заказа через приложение](diagrams/class.jpg){: .hover-zoom }](diagrams/class.jpg){: target="_blank" }
+[![Оформление заказа через приложение](diagrams/class_ed_good.jpg){: .hover-zoom }](diagrams/class_ed_good.jpg){: target="_blank" }
 
 <style>
 .hover-zoom {
