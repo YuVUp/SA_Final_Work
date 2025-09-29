@@ -15,7 +15,7 @@
 
 ## 8.2. Диаграмма компонентов
 
-[![Оформление заказа через приложение](diagrams/component_diagram.png){: .hover-zoom }](diagrams/component_diagram.png){: target="_blank" }
+[![Оформление заказа через приложение](diagrams/component_diagramBW.png){: .hover-zoom }](diagrams/component_diagramBW.png){: target="_blank" }
 
 ## 8.3 Таблица информационных потоков
 
