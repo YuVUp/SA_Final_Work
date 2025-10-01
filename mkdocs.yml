@@ -15,6 +15,7 @@ nav:
     - Глава 10 Пользовательский интерфейс: 10_user_interface.md
     - Глава 11 API приложения: 11_api.md
     - Глава 12 Постановки на разработку: 12_dev_assignments.md
+    - Глава 13 Тестовые сценарии: 13_test_scenarios.md
   - Ресурсы:
     - Диаграммы: diagrams/index.md
     - Файрфреймы: wf/index.md
