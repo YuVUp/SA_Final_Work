@@ -1,0 +1,1251 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>13. Тестовые сценарии - Приложение для заказа и система оповещения</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#13" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="Приложение для заказа и система оповещения" class="md-header__button md-logo" aria-label="Приложение для заказа и система оповещения" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Приложение для заказа и система оповещения
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13. Тестовые сценарии
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1_glossary/" class="md-tabs__link">
+          
+  
+  
+  Документация
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../diagrams/" class="md-tabs__link">
+          
+  
+  
+  Ресурсы
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Приложение для заказа и система оповещения" class="md-nav__button md-logo" aria-label="Приложение для заказа и система оповещения" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Приложение для заказа и система оповещения
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Главная
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Документация
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Документация
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 1 Глоссарий
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_general_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 2 Общие сведения
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 3 Назначение и цели
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_object_param/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 4 Характеристика объекта
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_business_processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 5 Описание бизнес-процессов
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6_system_requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 6 Требования к системе
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7_information_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 7 Информационная модель
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8_%D1%81omponent_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 8 Компонентная архитектура
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9_integration_interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 9 Интеграционное взаимодействие
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_user_interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 10 Пользовательский интерфейс
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 11 API приложения
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_dev_assignments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Глава 12 Постановки на разработку
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ресурсы
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ресурсы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Диаграммы
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Файрфреймы
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="13">13.   Тестовые сценарии</h1>
+<h2 id="131">13.1.    Критерии приемки и тестовые сценарии для задач в рамках первого релиза</h2>
+<h1 id="_1">Тестовые сценарии</h1>
+<h2 id="uc_viewmenu"><strong>UC_ViewMenu (Просмотреть меню)</strong></h2>
+<h3 id="ac-0101"><strong>AC 01.01: Отображение главных категорий</strong></h3>
+<p><strong>Given:</strong> Система загружена, меню доступно.
+<strong>When:</strong> Посетитель открывает экран меню.
+<strong>Then:</strong> Система отображает кнопки или вкладки с названиями основных категорий.</p>
+<p><strong>Кейс 1: Отображение всех основных категорий (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Система загружена
+- Меню доступно
+- Категории настроены в системе: "Все", "Горячее", "Напитки", "Салаты", "Десерт"</p>
+<p><strong>Шаги:</strong>
+1. Открыть экран меню</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 1: Отображаются кнопки всех основных категорий: "Все", "Горячее", "Напитки", "Салаты", "Десерт"</p>
+<p><strong>Кейс 2: Отображение категорий при пустом меню (Негативный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Система загружена
+- В меню нет блюд (все категории пустые)</p>
+<p><strong>Шаги:</strong>
+1. Открыть экран меню</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 1: Отображаются кнопки категорий, но при выборе категории показывается сообщение "Нет доступных блюд"</p>
+<h3 id="ac-0102"><strong>AC 01.02: Навигация по категориям</strong></h3>
+<p><strong>Given:</strong> Посетитель находится на экране меню и видит список категорий.
+<strong>When:</strong> Он нажимает на конкретную категорию.
+<strong>Then:</strong> Система скрывает другие категории и отображает список блюд выбранной категории.</p>
+<p><strong>Кейс 1: Навигация между категориями (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь находится на экране меню
+- Отображаются все категории
+- В категории "Напитки" есть 3 блюда, в "Горячее" - 5 блюд</p>
+<p><strong>Шаги:</strong>
+1. Нажать на категорию "Напитки"
+2. Проверить отображение блюд
+3. Нажать на категорию "Горячее"
+4. Проверить отображение блюд</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 2: Отображаются только 3 блюда из категории "Напитки"
+Шаг 4: Отображаются только 5 блюд из категории "Горячее", блюда из "Напитки" скрыты</p>
+<h3 id="ac-0201"><strong>AC 02.01: Базовая информация на карточке блюда</strong></h3>
+<p><strong>Given:</strong> Посетитель открыл категорию с доступными блюдами.
+<strong>When:</strong> Система отображает список блюд.
+<strong>Then:</strong> Каждая карточка блюда содержит изображение, название, описание и цену.</p>
+<p><strong>Кейс 1: Отображение полной информации о блюде (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Открыта категория "Горячее"
+- В категории есть блюдо "Чизбургер" с изображением, описанием "Мясная котлета с сыром" и ценой 250 ₽</p>
+<p><strong>Шаги:</strong>
+1. Найти карточку "Чизбургер" в списке</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 1: Карточка содержит:
+- Четкое изображение чизбургера
+- Название "Чизбургер"
+- Описание "Мясная котлета с сыром"
+- Цену "250 ₽"</p>
+<h3 id="ac-0202"><strong>AC 02.02: Корректное отображение контента</strong></h3>
+<p><strong>Given:</strong> В системе есть блюдо без изображения.
+<strong>When:</strong> Это блюдо отображается в меню.
+<strong>Then:</strong> Система показывает стандартную картинку-заглушку.</p>
+<p><strong>Кейс 1: Отображение блюда без изображения (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- В системе есть блюдо "Сырный суп" без загруженного изображения
+- Открыта категория "Горячее"</p>
+<p><strong>Шаги:</strong>
+1. Найти карточку "Сырный суп" в списке</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 1: Карточка содержит:
+- Стандартную картинку-заглушку
+- Название "Сырный суп"
+- Описание и цену, отображаемые корректно</p>
+<hr />
+<h2 id="uc_addtocart"><strong>UC_AddToCart (Добавить позиции в корзину)</strong></h2>
+<h3 id="ac-0301"><strong>AC 03.01: Добавление единицы товара</strong></h3>
+<p><strong>Given:</strong> Посетитель просматривает карточку доступного блюда.
+<strong>When:</strong> Он нажимает кнопку "Добавить".
+<strong>Then:</strong> Система добавляет 1 единицу блюда в корзину, счетчик увеличивается на 1.</p>
+<p><strong>Кейс 1: Добавление первого товара в корзину (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Корзина пуста
+- Счетчик в шапке не отображается
+- Открыта карточка блюда "Чизбургер"</p>
+<p><strong>Шаги:</strong>
+1. Нажать кнопку "Добавить" на карточке "Чизбургер"</p>
+<p><strong>Ожидаемый результат:</strong>
+- В корзину добавлен 1 чизбургер
+- Счетчик в шапке показывает "1"
+- Кнопка "Добавить" временно становится неактивной или меняет вид</p>
+<h3 id="ac-0302"><strong>AC 03.02: Визуальное подтверждение добавления</strong></h3>
+<p><strong>Given:</strong> Посетитель нажимает кнопку "Добавить".
+<strong>When:</strong> Кнопка нажата.
+<strong>Then:</strong> Появляется анимация или текст "Добавлено".</p>
+<p><strong>Кейс 1: Визуальная обратная связь при добавлении (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Корзина пуста
+- Открыта карточка блюда "Кола"</p>
+<p><strong>Шаги:</strong>
+1. Нажать кнопку "Добавить" на карточке "Кола"</p>
+<p><strong>Ожидаемый результат:</strong>
+- Рядом с кнопкой появляется текст "Добавлено" или анимация подтверждения
+- Через 2-3 секунды индикация исчезает
+- Счетчик в шапке обновляется</p>
+<h3 id="ac-0303"><strong>AC 03.03: Повторное добавление одного блюда</strong></h3>
+<p><strong>Given:</strong> Блюдо уже находится в корзине.
+<strong>When:</strong> Посетитель снова нажимает кнопку "Добавить".
+<strong>Then:</strong> Система увеличивает количество существующей позиции.</p>
+<p><strong>Кейс 1: Увеличение количества существующего товара (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- В корзине уже есть "Чизбургер" ×1
+- Счетчик показывает "1"
+- Открыта карточка "Чизбургер"</p>
+<p><strong>Шаги:</strong>
+1. Нажать кнопку "Добавить" на карточке "Чизбургер"
+2. Открыть корзину для проверки</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 1: Счетчик увеличивается до "2"
+Шаг 2: В корзине отображается "Чизбургер" ×2 (без дубликатов)</p>
+<h3 id="ac-0401"><strong>AC 04.01: Просмотр состава заказа</strong></h3>
+<p><strong>Given:</strong> Посетитель перешел на экран "Проверка заказа".
+<strong>When:</strong> Экран загружается.
+<strong>Then:</strong> Система отображает список всех добавленных позиций.</p>
+<p><strong>Кейс 1: Отображение полного состава заказа (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- В корзине добавлены: "Чизбургер" ×2, "Кола" ×1, "Картофель фри" ×1</p>
+<p><strong>Шаги:</strong>
+1. Перейти на экран "Проверка заказа"</p>
+<p><strong>Ожидаемый результат:</strong>
+- Отображаются все 3 позиции
+- Для каждой указано: название, количество, цена за единицу
+- Отображается общая сумма заказа</p>
+<h3 id="ac-0402"><strong>AC 04.02: Изменение количества в списке</strong></h3>
+<p><strong>Given:</strong> Посетитель находится на экране "Проверка заказа".
+<strong>When:</strong> Он изменяет количество конкретной позиции.
+<strong>Then:</strong> Количество, стоимость и общая сумма немедленно пересчитываются.</p>
+<p><strong>Кейс 1: Изменение количества товара с пересчетом сумм (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- На экране "Проверка заказа" отображается "Чизбургер" ×2 (250 ₽/шт)
+- Общая сумма: 500 ₽</p>
+<p><strong>Шаги:</strong>
+1. Нажать "+" у "Чизбургер" (увеличить до 3)
+2. Проверить отображение сумм</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 2: 
+- Количество: 3
+- Стоимость позиции: 750 ₽
+- Общая сумма: 750 ₽</p>
+<h3 id="ac-0403"><strong>AC 04.03: Удаление позиции из состава заказа</strong></h3>
+<p><strong>Given:</strong> Посетитель находится на экране "Проверка заказа".
+<strong>When:</strong> Он нажимает кнопку "Удалить" для позиции.
+<strong>Then:</strong> Позиция удаляется из списка, сумма пересчитывается.</p>
+<p><strong>Кейс 1: Удаление товара из корзины (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- На экране "Проверка заказа" отображается: "Чизбургер" ×2 (500 ₽), "Кола" ×1 (100 ₽)
+- Общая сумма: 600 ₽</p>
+<p><strong>Шаги:</strong>
+1. Нажать "Удалить" у позиции "Кола"
+2. Проверить обновленный список и сумму</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 2:
+- Позиция "Кола" удалена из списка
+- Отображается только "Чизбургер" ×2
+- Общая сумма: 500 ₽</p>
+<h3 id="ac-0501"><strong>AC 05.01: Отображение суммы в корзине</strong></h3>
+<p><strong>Given:</strong> Посетитель открыл экран корзины, и в ней есть товары.
+<strong>When:</strong> Страница корзины загружена.
+<strong>Then:</strong> В нижней части отображается итоговая сумма.</p>
+<p><strong>Кейс 1: Расчет итога для нескольких товаров (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- В корзине добавлено 3 товара:
+  - Товар A: Цена = 100 ₽, Количество = 2
+  - Товар B: Цена = 50 ₽, Количество = 1
+  - Товар C: Цена = 200 ₽, Количество = 3</p>
+<p><strong>Шаги:</strong>
+1. Перейти на страницу корзины</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 1: На странице отображается итоговая сумма: 850 ₽</p>
+<p><strong>Кейс 2: Расчет итога с товаром нулевой стоимости</strong></p>
+<p><strong>Предусловия:</strong>
+- В корзине добавлено 2 товара:
+  - Товар A: Цена = 0 ₽, Количество = 1 (акционный товар)
+  - Товар B: Цена = 150 ₽, Количество = 1</p>
+<p><strong>Шаги:</strong>
+1. Перейти на страницу корзины</p>
+<p><strong>Ожидаемый результат:</strong>
+Шаг 1: На странице отображается итоговая сумма: 150 ₽</p>
+<h3 id="ac-0502"><strong>AC 05.02: Индикатор суммы в шапке</strong></h3>
+<p><strong>Given:</strong> Посетитель находится на любом экране киоска.
+<strong>When:</strong> В корзину добавлен товар.
+<strong>Then:</strong> В шапке отображается общая сумма заказа.</p>
+<p><strong>Кейс 1: Отображение суммы в шапке на разных экранах (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- В корзине товары на сумму 350 ₽</p>
+<p><strong>Шаги:</strong>
+1. Находиться на экране меню - проверить шапку
+2. Перейти на экран "Акции" - проверить шапку</p>
+<p><strong>Ожидаемый результат:</strong>
+На всех экранах в шапке отображается сумма "350 ₽"</p>
+<h3 id="ac-0503"><strong>AC 05.03: Отображение детализации суммы</strong></h3>
+<p><strong>Given:</strong> Посетитель перешел на экран "Проверка заказа".
+<strong>When:</strong> Экран загружен.
+<strong>Then:</strong> Отображаются "Промежуточный итог" и "Итого".</p>
+<p><strong>Кейс 1: Детализация суммы на экране проверки заказа (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- В корзине: "Чизбургер" ×2 (500 ₽), "Кола" ×1 (100 ₽)
+- Общая сумма: 600 ₽</p>
+<p><strong>Шаги:</strong>
+1. Перейти на экран "Проверка заказа"</p>
+<p><strong>Ожидаемый результат:</strong>
+Отображается:
+- Промежуточный итог: 600 ₽
+- Итого к оплате: 600 ₽</p>
+<hr />
+<h2 id="_2"><strong>Защита от повторных списаний</strong></h2>
+<p><strong>Given:</strong> Покупатель нажал кнопку "Оплатить" только один раз, но произошел сбой сети или интерфейса.
+<strong>When:</strong> Он обновляет страницу или возвращается назад.
+<strong>Then:</strong> Система проверяет статус заказа и не инициирует повторное списание.</p>
+<p><strong>Кейс 1: Повторный запрос после успешной оплаты (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь имеет заказ в статусе "Оплачен"
+- Оплата уже прошла успешно, но клиент не получил подтверждение из-за сбоя сети</p>
+<p><strong>Шаги:</strong>
+1. Пользователь обновляет страницу (F5)
+2. Система автоматически проверяет статус заказа</p>
+<p><strong>Ожидаемый результат:</strong>
+- Система НЕ инициирует новый платеж
+- Пользователь видит сообщение: "Заказ №123 уже оплачен 10.05.2024 в 15:30"
+- Сумма со счета не списывается повторно</p>
+<p><strong>Кейс 2: Повторный запрос после неудачной оплаты (Негативный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь имеет заказ в статусе "Ожидает оплаты"
+- Предыдущая попытка оплаты завершилась ошибкой "Недостаточно средств"</p>
+<p><strong>Шаги:</strong>
+1. Пользователь обновляет страницу (F5)
+2. Система автоматически проверяет статус заказа</p>
+<p><strong>Ожидаемый результат:</strong>
+- Система НЕ инициирует новый платеж автоматически
+- Пользователь видит сообщение о неудачной предыдущей попытке
+- Средства со счета не списываются</p>
+<p><strong>Кейс 3: Повторный запрос во время обработки платежа (Негативный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь имеет заказ в статусе "Оплачивается"
+- Платеж находится в состоянии "Обрабатывается" на стороне платежного шлюза</p>
+<p><strong>Шаги:</strong>
+1. Не дожидаясь ответа, пользователь обновляет страницу (F5)
+2. Система автоматически проверяет статус заказа</p>
+<p><strong>Ожидаемый результат:</strong>
+- Система НЕ инициирует новый платеж
+- Система отображает статус "Платеж обрабатывается, пожалуйста, подождите"
+- Счет пользователя не списывается повторно</p>
+<hr />
+<h2 id="uc_makepayment"><strong>UC_MakePayment (Произвести оплату)</strong></h2>
+<h3 id="ac-0601"><strong>AC 06.01: Предоставление выбора способа оплаты</strong></h3>
+<p><strong>Given:</strong> Посетитель перешел на экран "Оплата".
+<strong>When:</strong> Экран загружается.
+<strong>Then:</strong> Система отображает доступные способы оплаты в виде четких блоков с иконками и текстом.</p>
+<p><strong>Кейс 1: Отображение способов оплаты с иконками (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь перешел на экран "Оплата"
+- Доступны способы: "Банковская карта", "Наличными"</p>
+<p><strong>Шаги:</strong>
+1. Дождаться загрузки экрана "Оплата"</p>
+<p><strong>Ожидаемый результат:</strong>
+- Отображаются блоки с способами оплаты
+- Каждый блок содержит иконку и текст
+- Блок "Банковская карта" имеет соответствующую иконку
+- Блок "Наличными" имеет соответствующую иконку</p>
+<h3 id="ac-0602"><strong>AC 06.02: Выбор безналичной оплаты</strong></h3>
+<p><strong>Given:</strong> Посетитель находится на экране "Оплата".
+<strong>When:</strong> Он нажимает на блок "Банковская карта".
+<strong>Then:</strong> Система переходит к процессу оплаты картой.</p>
+<p><strong>Кейс 1: Переход к оплате картой (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь на экране "Оплата"
+- Отображаются способы оплаты</p>
+<p><strong>Шаги:</strong>
+1. Нажать на блок "Банковская карта"</p>
+<p><strong>Ожидаемый результат:</strong>
+- Система переходит на экран оплаты картой
+- Отображаются поля для ввода данных карты или запускается NFC-модуль</p>
+<h3 id="ac-0701"><strong>AC 07.01: Ввод данных карты</strong></h3>
+<p><strong>Given:</strong> Посетитель выбрал оплату банковской картой.
+<strong>When:</strong> Система отображает форму для ввода данных.
+<strong>Then:</strong> Форма содержит поля "Номер карты", "Срок действия", "CVV".</p>
+<p><strong>Кейс 1: Отображение формы оплаты картой (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь выбрал оплату картой
+- Открыт экран ввода данных</p>
+<p><strong>Шаги:</strong>
+1. Проверить наличие полей формы</p>
+<p><strong>Ожидаемый результат:</strong>
+- Присутствует поле "Номер карты" с форматированием по 4 цифры
+- Присутствует поле "Срок действия" в формате ММ/ГГ
+- Присутствует поле "CVV"
+- Все поля доступны для ввода</p>
+<h3 id="ac-0702"><strong>AC 07.02: Валидация данных карты</strong></h3>
+<p><strong>Given:</strong> Посетитель вводит данные в форму оплаты картой.
+<strong>When:</strong> Он вводит неверный номер карты.
+<strong>Then:</strong> Поле с ошибкой подсвечивается с пояснением.</p>
+<p><strong>Кейс 1: Валидация неверного номера карты (Негативный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Открыта форма оплаты картой
+- Все поля пустые</p>
+<p><strong>Шаги:</strong>
+1. Ввести неполный номер карты "4111 1111 1111"
+2. Перейти к следующему полю</p>
+<p><strong>Ожидаемый результат:</strong>
+- Поле "Номер карты" подсвечивается красным
+- Под полем отображается текст "Неверный номер карты"
+- Кнопка оплаты неактивна</p>
+<h3 id="ac-0801"><strong>AC 08.01: Выбор оплаты наличными</strong></h3>
+<p><strong>Given:</strong> Посетитель находится на экране "Оплата".
+<strong>When:</strong> Он нажимает на блок "Наличными при получении".
+<strong>Then:</strong> Система показывает подтверждение и кнопку "Подтвердить заказ".</p>
+<p><strong>Кейс 1: Подтверждение оплаты наличными (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь на экране "Оплата"
+- Отображаются способы оплаты</p>
+<p><strong>Шаги:</strong>
+1. Нажать на блок "Наличными при получении"</p>
+<p><strong>Ожидаемый результат:</strong>
+- Отображается сообщение: "Заказ будет передан на кухню. Оплатите наличными при получении у стойки выдачи."
+- Отображается кнопка "Подтвердить заказ"
+- Кнопка активна и доступна для нажатия</p>
+<hr />
+<h2 id="uc_getreceipt"><strong>UC_GetReceipt (Получить талон с номером)</strong></h2>
+<h3 id="ac-0901"><strong>AC 09.01: Печать чека</strong></h3>
+<p><strong>Given:</strong> Оплата заказа прошла успешно.
+<strong>When:</strong> Система обработала подтверждение оплаты.
+<strong>Then:</strong> Система автоматически отправляет команду на печать чека.</p>
+<p><strong>Кейс 1: Автоматическая печать чека после оплаты (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Оплата заказа прошла успешно
+- Принтер чеков подключен и готов
+- Заказ №R-257</p>
+<p><strong>Шаги:</strong>
+1. Завершить процесс успешной оплаты
+2. Проверить отправку команды на печать</p>
+<p><strong>Ожидаемый результат:</strong>
+- Система автоматически отправляет команду на печать
+- Принтер получает команду печати
+- Чек начинает печататься</p>
+<h3 id="ac-0902"><strong>AC 09.02: Содержимое чека</strong></h3>
+<p><strong>Given:</strong> Чек отправлен на печать.
+<strong>When:</strong> Чек распечатан.
+<strong>Then:</strong> На чеке указан номер заказа, список позиций, итоговая сумма, дата и время.</p>
+<p><strong>Кейс 1: Проверка содержимого чека (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Чек отправлен на печать для заказа №R-257
+- В заказе: "Чизбургер" ×2 (500 ₽), "Кола" ×1 (100 ₽)
+- Общая сумма: 600 ₽</p>
+<p><strong>Шаги:</strong>
+1. Получить распечатанный чек
+2. Проверить содержимое</p>
+<p><strong>Ожидаемый результат:</strong>
+Чек содержит:
+- Номер заказа: #R-257
+- Список позиций: Чизбургер ×2, Кола ×1
+- Итоговую сумму: 600 ₽
+- Текущую дату и время
+- Название заведения</p>
+<h3 id="ac-1001"><strong>AC 10.01: Отображение номера заказа</strong></h3>
+<p><strong>Given:</strong> Оплата прошла успешно.
+<strong>When:</strong> Система переходит на экран "Заказ принят".
+<strong>Then:</strong> На экране крупным шрифтом отображается номер заказа и статус.</p>
+<p><strong>Кейс 1: Отображение номера заказа после оплаты (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Оплата заказа №R-257 прошла успешно
+- Система переходит на финальный экран</p>
+<p><strong>Шаги:</strong>
+1. Дождаться перехода на экран "Заказ принят"</p>
+<p><strong>Ожидаемый результат:</strong>
+- Крупным шрифтом отображается: "Ваш номер заказа #R-257"
+- Отображается статус: "Готовится"
+- Номер хорошо читаем и выделен</p>
+<h3 id="ac-1002"><strong>AC 10.02: Информация для посетителя</strong></h3>
+<p><strong>Given:</strong> Посетитель находится на экране "Заказ принят".
+<strong>When:</strong> Он просматривает экран.
+<strong>Then:</strong> На экране присутствует сообщение и кнопка "Вернуться в меню".</p>
+<p><strong>Кейс 1: Отображение информации для ожидания (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Пользователь на экране "Заказ принят"
+- Отображается номер заказа</p>
+<p><strong>Шаги:</strong>
+1. Просмотреть весь экран</p>
+<p><strong>Ожидаемый результат:</strong>
+- Присутствует сообщение: "Ожидайте уведомления о готовности"
+- Отображается кнопка "Вернуться в меню"
+- Кнопка активна и кликабельна</p>
+<hr />
+<h2 id="us-11"><strong>US-11: Передача заказа на производство</strong></h2>
+<h3 id="ac-1101"><strong>AC 11.01: Передача заказа на производство</strong></h3>
+<p><strong>Given:</strong> Статус заказа изменился на "Оплачен".
+<strong>When:</strong> Фиксируется успешная оплата.
+<strong>Then:</strong> Система немедленно передает полные данные заказа на кухню.</p>
+<p><strong>Кейс 1: Автоматическая передача заказа на кухню (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Заказ №R-257 перешел в статус "Оплачен"
+- Система производства онлайн</p>
+<p><strong>Шаги:</strong>
+1. Зафиксировать успешную оплату
+2. Проверить передачу данных</p>
+<p><strong>Ожидаемый результат:</strong>
+- Данные заказа немедленно передаются в систему управления производством
+- Передаются все данные: состав, особенности, время заказа
+- Система производства подтверждает получение</p>
+<h3 id="ac-1102"><strong>AC 11.02: Смена статуса</strong></h3>
+<p><strong>Given:</strong> Заказ передан на кухню.
+<strong>When:</strong> Система производства подтверждает получение.
+<strong>Then:</strong> Статус заказа меняется на "Готовится".</p>
+<p><strong>Кейс 1: Смена статуса после принятия кухней (Позитивный)</strong></p>
+<p><strong>Предусловия:</strong>
+- Заказ №R-257 передан на кухню
+- Ожидается подтверждение от системы производства</p>
+<p><strong>Шаги:</strong>
+1. Дождаться подтверждения от системы производства
+2. Проверить статус заказа в интерфейсе</p>
+<p><strong>Ожидаемый результат:</strong>
+- Статус заказа меняется с "Оплачен" на "Готовится"
+- Изменение статуса отображается в реальном времени
+- На экране "Заказ принят" обновляется статус</p>
+<p>Рекомендую дополнить тестовые сценарии для полного покрытия всех критериев приемки.</p>
+<h2 id="-"><strong>Чек-лист приемки</strong></h2>
+<ul>
+<li>[ ] Отображаются ли категории ("Все", "Горячее", "Салаты", "Напитки")?</li>
+<li>[ ] Работает ли иконка корзины в header и отображается ли счетчик товаров?</li>
+<li>[ ] Уменьшается ли счетчик в хедере при удалении товара из корзины?</li>
+<li>[ ] Исчезает ли счетчик, если корзина пуста?</li>
+<li>[ ] Что происходит, если во время оплаты пропадает сеть?</li>
+<li>[ ] Корректно ли отображаются все изображения блюд?</li>
+<li>[ ] Соответствуют ли изображения блюд их названиям?</li>
+<li>[ ] Проходит ли успешная оплата заказа банковской картой?</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
