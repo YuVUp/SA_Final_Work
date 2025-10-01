@@ -31,4 +31,4 @@
 ...
 ## 10.2.	Прототип приложения
 
-[Интерактивный PDF](wf/prototype_new.pdf) {#prototype}
+[Интерактивный PDF](wf/prototype_new.pdf)
