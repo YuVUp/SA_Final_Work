@@ -7,7 +7,7 @@
 
 # 10.1.2 Инфорация о продукте
 
-![](wf/product_information.png)
+![](wf/product_information_small.png)
 
 ## 10.1.3 Тип заказа
 
